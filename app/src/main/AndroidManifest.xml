@@ -16,9 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".OwnDiaryReading">
-
+        <activity android:name=".OwnDiary">
         </activity>
+        <activity android:name=".DiaryReading"></activity>
+        <activity android:name=".LoginPage"></activity>
+        <activity android:name=".RandomDiary"></activity>
+        <activity android:name=".RegisterPage"></activity>
+
+
     </application>
 
 </manifest>

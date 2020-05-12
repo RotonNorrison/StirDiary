@@ -16,14 +16,17 @@
     />
     <EditText android:layout_width="300dp" android:layout_height="wrap_content"
               android:hint="密码"
+              android:id="@+id/login_password"
               android:layout_gravity="center"
               android:layout_marginTop="50dp"
     />
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="登录"
+            android:id="@+id/login_loginbtn"
             android:layout_gravity="center"/>
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="注册"
+            android:id="@+id/login_registerbtn"
             android:layout_gravity="center"/>
 </LinearLayout>
 
