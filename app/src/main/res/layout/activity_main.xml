@@ -7,15 +7,23 @@
               android:text="主界面"/>
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="用户"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:id="@+id/homepage_userInfoManagement"
+    />
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="创建日记"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:id="@+id/homepage_diaryCreation"
+    />
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="读自己的日记"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:id="@+id/homepage_ownDiaryReading"
+    />
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="读别人的日记"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:id="@+id/homepage_otherDiaryReading"
+    />
 
 </LinearLayout>
