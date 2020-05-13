@@ -22,7 +22,7 @@
         <activity android:name=".LoginPage"></activity>
         <activity android:name=".RandomDiary"></activity>
         <activity android:name=".RegisterPage"></activity>
-
+        <activity android:name=".UserInfo"></activity>
 
     </application>
 
