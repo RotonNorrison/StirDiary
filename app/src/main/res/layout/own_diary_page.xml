@@ -5,7 +5,21 @@
               android:layout_height="match_parent">
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
               android:text="自己的日记界面"/>
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="日记A"
-            android:layout_gravity="center"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:id="@+id/container1" android:orientation="horizontal">
+
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:id="@+id/container2" android:orientation="horizontal">
+
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:id="@+id/container3" android:orientation="horizontal">
+
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:id="@+id/container4" android:orientation="horizontal">
+
+    </LinearLayout>
+
 </LinearLayout>
