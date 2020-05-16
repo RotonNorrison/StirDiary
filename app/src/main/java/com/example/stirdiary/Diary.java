@@ -1,3 +1,5 @@
+package com.example.stirdiary;
+
 import java.util.Dictionary;
 
 public class Diary {
