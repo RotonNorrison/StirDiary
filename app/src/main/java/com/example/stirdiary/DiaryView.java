@@ -27,5 +27,4 @@ public class DiaryView extends View {
         ta.recycle();
     }
 
-
 }
