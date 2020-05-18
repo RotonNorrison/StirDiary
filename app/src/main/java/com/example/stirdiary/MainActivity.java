@@ -26,6 +26,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(it_for_reading);
             }
         });
+        //写日记按钮事件绑定
+        Button btn_for_creation;
+        btn_for_creation = findViewById(R.id.homepage_diaryCreation);
+        btn_for_creation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it_for_creation = new Intent(MainActivity.this, DiaryCreate.class);
+                startActivity(it_for_creation);
+            }
+
+        });
         //读日记按钮事件绑定
         Button btn_for_reading;
         btn_for_reading = findViewById(R.id.homepage_ownDiaryReading);
