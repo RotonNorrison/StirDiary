@@ -2,8 +2,9 @@ package com.example.stirdiary;
 
 import java.util.Dictionary;
 import java.util.HashMap;
+import java.io.Serializable;
 
-public class Diary {
+public class Diary implements Serializable {
     private String diary_title;
     private int bottle_kind;
     //基酒种类及对应的量
@@ -11,6 +12,7 @@ public class Diary {
     private String text;
     private int decoration;
     private boolean share_state;
+    private int stir_way;
 
 
     public String getDiary_title() {
@@ -59,5 +61,22 @@ public class Diary {
 
     public void setShare_state(boolean share_state) {
         this.share_state = share_state;
+    }
+
+    public int getStirWay() {
+        return stir_way;
+    }
+
+    public void setStirWay(int stir_way) {
+        this.stir_way = stir_way;
+    }
+
+    public void showInfo() {
+        System.out.println("Title: " + getDiary_title());
+        System.out.println("Bottle: " + getBottle_kind());
+        System.out.println("Text: " + getText());
+        System.out.println("Decoration: " + getDecoration());
+        System.out.println("ShareState: " + isShare_state());
+        System.out.println("StirWay: " + getStirWay());
     }
 }

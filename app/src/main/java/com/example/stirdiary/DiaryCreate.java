@@ -12,6 +12,8 @@ public class DiaryCreate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.diary_creation_page);
+        final Diary creatingDiary=new Diary();
+
         //开始调酒按钮事件绑定
         Button btn_for_start;
         btn_for_start = findViewById(R.id.diaryCreation_startbtn);
@@ -19,6 +21,7 @@ public class DiaryCreate extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent it_for_create1 = new Intent(DiaryCreate.this, DcBottle.class);
+                it_for_create1.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_create1);
                 finish();
             }
