@@ -13,8 +13,7 @@ public class DiaryReading extends AppCompatActivity {
         //Intent it=getIntent();
         //content=it.getStringExtra("src");
         setContentView(R.layout.diary_reading_page);
-        TextView paper = findViewById(R.id.textPaper);
+        TextView paper = findViewById(R.id.diary_reading_page_textPaper);
         paper.setText("content");
-        paper.setBackgroundResource(R.drawable.background);
     }
 }

@@ -12,6 +12,8 @@ public class DcStir extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.diary_creation_stir);
+        final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
+        creatingDiary.showInfo();
         //下一步按钮事件绑定
         Button btn_for_return_to_main;
         btn_for_return_to_main = findViewById(R.id.creatingStir_nextbtn);

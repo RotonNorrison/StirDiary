@@ -1,29 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:text="主界面"/>
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="用户"
-            android:layout_gravity="center"
-            android:id="@+id/homepage_userInfoManagement"
-    />
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="创建日记"
-            android:layout_gravity="center"
-            android:id="@+id/homepage_diaryCreation"
-    />
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="读自己的日记"
-            android:layout_gravity="center"
-            android:id="@+id/homepage_ownDiaryReading"
-    />
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="读别人的日记"
-            android:layout_gravity="center"
-            android:id="@+id/homepage_otherDiaryReading"
-    />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-</LinearLayout>
+    <ImageView
+            android:id="@+id/activity_main_bakground"
+            android:layout_width="163dp"
+            android:layout_height="386dp"
+            android:layout_marginTop="100dp"
+            android:paddingLeft="0dp"
+            android:src="@drawable/ic_store"/>
+
+    <ImageView
+            android:id="@+id/activity_main_light"
+            android:layout_width="155dp"
+            android:layout_height="181dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/ic_light"/>
+
+    <ImageView
+            android:id="@+id/activity_main_desk"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_below="@+id/activity_main_bakground"
+            android:layout_marginTop="-45dp"
+            android:src="@drawable/ic_desk"/>
+
+    <ImageView
+            android:id="@+id/activity_main_chair1"
+            android:layout_width="63dp"
+            android:layout_height="85dp"
+            android:layout_below="@+id/activity_main_bakground"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ic_chair"/>
+    <ImageView
+            android:id="@+id/activity_main_chair2"
+            android:layout_width="63dp"
+            android:layout_height="85dp"
+            android:layout_below="@+id/activity_main_bakground"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="165dp"
+            android:src="@drawable/ic_chair"/>
+    <ImageView
+            android:id="@+id/activity_main_chair3"
+            android:layout_width="63dp"
+            android:layout_height="85dp"
+            android:layout_below="@+id/activity_main_bakground"
+            android:layout_marginTop="55dp"
+            android:layout_marginLeft="315dp"
+            android:src="@drawable/ic_chair"/>
+
+    <ImageView
+            android:id="@+id/activity_main_tools"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_above="@+id/activity_main_desk"
+            android:layout_marginLeft="215dp"
+            android:layout_marginBottom="-10dp"
+            android:src="@drawable/ic_tools"/>
+</RelativeLayout>
