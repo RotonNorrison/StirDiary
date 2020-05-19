@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".OwnDiary">
-        </activity>09
+        </activity>
         <activity android:name=".DiaryReading"></activity>
         <activity android:name=".LoginPage"></activity>
         <activity android:name=".RandomDiary"></activity>
