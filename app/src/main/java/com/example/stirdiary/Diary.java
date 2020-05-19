@@ -1,7 +1,7 @@
 package com.example.stirdiary;
 
-import java.util.Dictionary;
-import java.util.HashMap;
+import android.util.Pair;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -9,7 +9,7 @@ public class Diary implements Serializable {
     private String diary_title;
     private int bottle_kind;
     //基酒种类及对应的量
-    private List<Wine> winelist;
+    private List<Pair<String, Double>> winelist;
     private String text;
     private int decoration;
     private boolean share_state;
@@ -33,12 +33,12 @@ public class Diary implements Serializable {
     }
 
 
-    public List<Wine> getWinelist() {
+    public List<Pair<String, Double>> getWinelist() {
         return winelist;
     }
 
-    public void addWine(int wine_kind, int volume) {
-        Wine temp = new Wine(wine_kind, volume);
+    public void addWine(String wine_name, double volume) {
+        Pair<String, Double> temp = new Pair<String, Double>(wine_name, volume);
         winelist.add(temp);
     }
 
