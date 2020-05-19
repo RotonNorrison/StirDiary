@@ -2,15 +2,18 @@ package com.example.stirdiary;
 
 import java.util.Dictionary;
 import java.util.HashMap;
+import java.io.Serializable;
+import java.util.List;
 
-public class Diary {
+public class Diary implements Serializable {
     private String diary_title;
     private int bottle_kind;
     //基酒种类及对应的量
-    private HashMap<Integer, Integer> wine_kind;
+    private List<Wine> winelist;
     private String text;
     private int decoration;
     private boolean share_state;
+    private int stir_way;
 
 
     public String getDiary_title() {
@@ -29,12 +32,14 @@ public class Diary {
         this.bottle_kind = bottle_kind;
     }
 
-    public HashMap<Integer, Integer> getWine_kind() {
-        return wine_kind;
+
+    public List<Wine> getWinelist() {
+        return winelist;
     }
 
-    public void setWine_kind(int wine_kind, int volume) {
-        this.wine_kind.put(wine_kind, volume);
+    public void addWine(int wine_kind, int volume) {
+        Wine temp = new Wine(wine_kind, volume);
+        winelist.add(temp);
     }
 
     public String getText() {
@@ -59,5 +64,22 @@ public class Diary {
 
     public void setShare_state(boolean share_state) {
         this.share_state = share_state;
+    }
+
+    public int getStirWay() {
+        return stir_way;
+    }
+
+    public void setStirWay(int stir_way) {
+        this.stir_way = stir_way;
+    }
+
+    public void showInfo() {
+        System.out.println("Title: " + getDiary_title());
+        System.out.println("Bottle: " + getBottle_kind());
+        System.out.println("Text: " + getText());
+        System.out.println("Decoration: " + getDecoration());
+        System.out.println("ShareState: " + isShare_state());
+        System.out.println("StirWay: " + getStirWay());
     }
 }
