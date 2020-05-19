@@ -3,12 +3,13 @@ package com.example.stirdiary;
 import java.util.Dictionary;
 import java.util.HashMap;
 import java.io.Serializable;
+import java.util.List;
 
 public class Diary implements Serializable {
     private String diary_title;
     private int bottle_kind;
     //基酒种类及对应的量
-    private HashMap<Integer, Integer> wine_kind;
+    private List<Wine> winelist;
     private String text;
     private int decoration;
     private boolean share_state;
@@ -31,12 +32,14 @@ public class Diary implements Serializable {
         this.bottle_kind = bottle_kind;
     }
 
-    public HashMap<Integer, Integer> getWine_kind() {
-        return wine_kind;
+
+    public List<Wine> getWinelist() {
+        return winelist;
     }
 
-    public void setWine_kind(int wine_kind, int volume) {
-        this.wine_kind.put(wine_kind, volume);
+    public void addWine(int wine_kind, int volume) {
+        Wine temp = new Wine(wine_kind, volume);
+        winelist.add(temp);
     }
 
     public String getText() {
