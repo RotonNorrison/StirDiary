@@ -1,17 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:text="读日记界面"/>
-    <TextView android:layout_width="300dp" android:layout_height="533dp"
-              android:id="@+id/textPaper"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/RelativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <ImageView android:layout_width="30dp" android:layout_height="30dp"
+               android:id="@+id/diary_reading_page_back"
+               android:src="@drawable/previous"
+               android:layout_marginTop="5dp"
+               android:layout_gravity="left"
+    />
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Shared Diaries"
+              android:layout_centerHorizontal="true"
+              android:textSize="30sp"
               android:layout_gravity="center"
+    />
+    <TextView android:layout_width="364dp" android:layout_height="504dp"
+              android:id="@+id/diary_reading_page_textPapershadow"
+              android:layout_centerHorizontal="true"
               android:textColor="@android:color/white"
               android:textSize="10dp"
+              android:layout_marginTop="68dp"
+              android:background="@drawable/shadow"
     />
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:text="分享"
-            android:layout_gravity="center"/>
-</LinearLayout>
+    <TextView android:layout_width="360dp" android:layout_height="500dp"
+              android:id="@+id/diary_reading_page_textPaper"
+              android:layout_centerHorizontal="true"
+              android:textColor="@android:color/white"
+              android:textSize="10dp"
+              android:layout_marginTop="70dp"
+    />
+    <ImageView android:layout_width="80dp" android:layout_height="80dp"
+               android:id="@+id/diary_reading_page_like"
+               android:src="@drawable/ic_like"
+               android:layout_marginBottom="50dp"
+               android:layout_marginLeft="100dp"
+               android:layout_alignParentBottom="true"/>
+    <ImageView android:layout_width="93dp" android:layout_height="93dp"
+               android:id="@+id/diary_reading_page_ID"
+               android:src="@drawable/ic_id"
+               android:layout_marginBottom="42dp"
+               android:layout_toRightOf="@id/diary_reading_page_like"
+               android:layout_marginLeft="60dp"
+               android:layout_alignParentBottom="true"/>
+    />
+</RelativeLayout>
