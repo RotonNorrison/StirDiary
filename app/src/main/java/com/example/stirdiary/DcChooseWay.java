@@ -4,11 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class DcChooseWay extends AppCompatActivity {
+
+    private RadioGroup radioGroup = null;
+    private RadioButton chooseStirWay_radiobtn_duihe, chooseStirWay_radiobtn_tiaohe, chooseStirWay_radiobtn_yaohe;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,34 +22,35 @@ public class DcChooseWay extends AppCompatActivity {
         final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
         creatingDiary.showInfo();
 
-
         //选择调制方式事件绑定
-        ImageButton btn_for_choose_stir_way1 = findViewById(R.id.creatingStir_stirway1btn);
-        btn_for_choose_stir_way1.setOnClickListener(new View.OnClickListener() {
+        radioGroup = (RadioGroup) findViewById(R.id.chooseStirWay_radioGroup);
+        chooseStirWay_radiobtn_duihe = (RadioButton) findViewById(R.id.chooseStirWay_radiobtn_duihe);
+        chooseStirWay_radiobtn_tiaohe = (RadioButton) findViewById(R.id.chooseStirWay_radiobtn_tiaohe);
+        chooseStirWay_radiobtn_yaohe = (RadioButton) findViewById(R.id.chooseStirWay_radiobtn_yaohe);
+        radioGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                creatingDiary.setStirWay(1);
-            }
-        });
-        ImageButton btn_for_choose_stir_way2 = findViewById(R.id.creatingStir_stirway2btn);
-        btn_for_choose_stir_way2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                creatingDiary.setStirWay(2);
-            }
-        });
-        ImageButton btn_for_choose_stir_way3 = findViewById(R.id.creatingStir_stirway3btn);
-        btn_for_choose_stir_way3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                creatingDiary.setStirWay(3);
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                int id = group.getCheckedRadioButtonId();
+                switch (id) {
+                    case R.id.chooseStirWay_radiobtn_duihe:
+                        creatingDiary.setStirWay(1);
+                        break;
+                    case R.id.chooseStirWay_radiobtn_tiaohe:
+                        creatingDiary.setStirWay(2);
+                        break;
+                    case R.id.chooseStirWay_radiobtn_yaohe:
+                        creatingDiary.setStirWay(3);
+                        break;
+                }
             }
         });
 
 
         //下一步按钮事件绑定
         Button btn_for_continue_to_creating_final_preview;
-        btn_for_continue_to_creating_final_preview = findViewById(R.id.chooseStirway_nextbtn);
+        btn_for_continue_to_creating_final_preview =
+
+                findViewById(R.id.chooseStirway_nextbtn);
         btn_for_continue_to_creating_final_preview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

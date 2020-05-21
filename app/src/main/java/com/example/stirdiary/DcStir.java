@@ -20,8 +20,9 @@ public class DcStir extends AppCompatActivity {
         btn_for_return_to_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it_for_return_to_main = new Intent(DcStir.this, DcFinal.class);
-                startActivity(it_for_return_to_main);
+                Intent it_to_creating_final = new Intent(DcStir.this, DcFinal.class);
+                it_to_creating_final.putExtra("diaryInfo", creatingDiary);
+                startActivity(it_to_creating_final);
                 finish();
             }
         });
