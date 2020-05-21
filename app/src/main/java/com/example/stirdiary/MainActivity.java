@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //创建日记文件保存类
+        DiaryFileHelper mFileHelper = new DiaryFileHelper(this);
+
         //打开应用时进入登录界面
         Intent it_for_login = new Intent(MainActivity.this, LoginPage.class);
         startActivity(it_for_login);

@@ -41,39 +41,30 @@ public class Diary implements Serializable {
         Pair<String, Double> temp = new Pair<String, Double>(wine_name, volume);
         winelist.add(temp);
     }
-
     public String getText() {
         return text;
     }
-
     public void setText(String text) {
         this.text = text;
     }
-
     public int getDecoration() {
         return decoration;
     }
-
     public void setDecoration(int decoration) {
         this.decoration = decoration;
     }
-
     public boolean isShare_state() {
         return share_state;
     }
-
     public void setShare_state(boolean share_state) {
         this.share_state = share_state;
     }
-
     public int getStirWay() {
         return stir_way;
     }
-
     public void setStirWay(int stir_way) {
         this.stir_way = stir_way;
     }
-
     public void showInfo() {
         System.out.println("Title: " + getDiary_title());
         System.out.println("Bottle: " + getBottle_kind());

@@ -26,7 +26,7 @@ public class OwnDiary extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent it = new Intent(OwnDiary.this, DiaryReading.class);
-                    it.putExtra("src", contentsrc);
+                    it.putExtra("filename", contentsrc);
                     startActivity(it);
                 }
             });
