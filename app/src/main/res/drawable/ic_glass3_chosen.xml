@@ -1,0 +1,84 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="129.9dp"
+    android:height="185dp"
+    android:viewportWidth="129.9"
+    android:viewportHeight="185">
+  <path
+      android:pathData="M13.9,55.1c-2.8,-8.9 -4.4,-18.7 -4.4,-29c0,-5.7 0.5,-11.2 1.4,-16.5"
+      android:strokeWidth="19"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFF557"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M116.1,55c-8.4,26.8 -28.1,45.5 -51.1,45.5c-23,0 -42.7,-18.8 -51.1,-45.5"
+      android:strokeWidth="19"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFF557"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M119.1,9.5c0.9,5.3 1.4,10.8 1.4,16.5c0,10.3 -1.6,20.1 -4.4,29"
+      android:strokeWidth="19"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFF557"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M11,9.5L118.9,9.5"
+      android:strokeWidth="19"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFF557"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M65.3,100.6L65.3,175.5"
+      android:strokeWidth="19"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFF557"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M30.1,175.5L101.3,175.5"
+      android:strokeWidth="19"
+      android:fillColor="#00000000"
+      android:strokeColor="#FFF557"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M14.9,55.1c-2.8,-8.9 -4.4,-18.7 -4.4,-29c0,-5.7 0.5,-11.2 1.4,-16.5"
+      android:strokeWidth="6"
+      android:fillColor="#00000000"
+      android:strokeColor="#4D245F"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M117.1,55c-8.4,26.8 -28.1,45.5 -51.1,45.5c-23,0 -42.7,-18.8 -51.1,-45.5"
+      android:strokeWidth="6"
+      android:fillColor="#00000000"
+      android:strokeColor="#4D245F"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M120.1,9.5c0.9,5.3 1.4,10.8 1.4,16.5c0,10.3 -1.6,20.1 -4.4,29"
+      android:strokeWidth="6"
+      android:fillColor="#00000000"
+      android:strokeColor="#4D245F"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M12,9.5L119.9,9.5"
+      android:strokeWidth="6"
+      android:fillColor="#00000000"
+      android:strokeColor="#4D245F"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M66.3,100.6L66.3,175.5"
+      android:strokeWidth="6"
+      android:fillColor="#00000000"
+      android:strokeColor="#4D245F"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M31.1,175.5L102.3,175.5"
+      android:strokeWidth="6"
+      android:fillColor="#00000000"
+      android:strokeColor="#4D245F"
+      android:strokeLineCap="round"/>
+  <path
+      android:pathData="M52.6,55.2l0.6,36.2c-6.4,0 -13.2,-7 -17.8,-13.1S24.7,64 23.5,55.7L52.6,55.2z"
+      android:fillColor="#E6E6E6"/>
+  <path
+      android:pathData="M48.4,48.6H34.1c-6.5,0 -11.8,-5.3 -11.8,-11.8V19h26.1V48.6z"
+      android:fillColor="#E6E6E6"/>
+</vector>
