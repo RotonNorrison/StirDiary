@@ -15,7 +15,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chooseBottle_Bottle1_btn"
-        app:srcCompat="@drawable/ic_glass3" />
+        app:srcCompat="@drawable/ic_glass3_selector" />
 
     <ImageButton
         android:id="@+id/chooseBottle_Bottle4_btn"
@@ -26,7 +26,7 @@
         android:layout_marginTop="36dp"
         app:layout_constraintStart_toEndOf="@+id/chooseBottle_Bottle3_btn"
         app:layout_constraintTop_toBottomOf="@+id/chooseBottle_Bottle2_btn"
-        app:srcCompat="@drawable/ic_glass4" />
+        app:srcCompat="@drawable/ic_glass4_selector" />
 
     <ImageButton
         android:id="@+id/chooseBottle_Bottle2_btn"
@@ -37,7 +37,7 @@
         android:layout_marginTop="88dp"
         app:layout_constraintStart_toEndOf="@+id/chooseBottle_Bottle1_btn"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_glass2" />
+        app:srcCompat="@drawable/ic_glass2_selector" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,5 +66,5 @@
         android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_glass1" />
+        app:srcCompat="@drawable/ic_glass1_selector" />
 </androidx.constraintlayout.widget.ConstraintLayout>
