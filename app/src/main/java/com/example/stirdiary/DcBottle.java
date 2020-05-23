@@ -16,32 +16,51 @@ public class DcBottle extends AppCompatActivity {
         final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
         creatingDiary.showInfo();
         //四个酒的按钮事件
-        ImageButton btn_for_choose_bottle1 = findViewById(R.id.chooseBottle_Bottle1_btn);
+        final ImageButton btn_for_choose_bottle1 = findViewById(R.id.chooseBottle_Bottle1_btn);
+        final ImageButton btn_for_choose_bottle2 = findViewById(R.id.chooseBottle_Bottle2_btn);
+        final ImageButton btn_for_choose_bottle3 = findViewById(R.id.chooseBottle_Bottle3_btn);
+        final ImageButton btn_for_choose_bottle4 = findViewById(R.id.chooseBottle_Bottle4_btn);
         btn_for_choose_bottle1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 creatingDiary.setBottle_kind(1);
+                btn_for_choose_bottle1.setImageResource(R.drawable.ic_glass1_chosen);
+                btn_for_choose_bottle2.setImageResource(R.drawable.ic_glass2);
+                btn_for_choose_bottle3.setImageResource(R.drawable.ic_glass3);
+                btn_for_choose_bottle4.setImageResource(R.drawable.ic_glass4);
             }
         });
-        ImageButton btn_for_choose_bottle2 = findViewById(R.id.chooseBottle_Bottle2_btn);
+
         btn_for_choose_bottle2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 creatingDiary.setBottle_kind(2);
+                btn_for_choose_bottle1.setImageResource(R.drawable.ic_glass1);
+                btn_for_choose_bottle2.setImageResource(R.drawable.ic_glass2_chosen);
+                btn_for_choose_bottle3.setImageResource(R.drawable.ic_glass3);
+                btn_for_choose_bottle4.setImageResource(R.drawable.ic_glass4);
             }
         });
-        ImageButton btn_for_choose_bottle3 = findViewById(R.id.chooseBottle_Bottle3_btn);
+
         btn_for_choose_bottle3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 creatingDiary.setBottle_kind(3);
+                btn_for_choose_bottle1.setImageResource(R.drawable.ic_glass1);
+                btn_for_choose_bottle2.setImageResource(R.drawable.ic_glass2);
+                btn_for_choose_bottle3.setImageResource(R.drawable.ic_glass3_chosen);
+                btn_for_choose_bottle4.setImageResource(R.drawable.ic_glass4);
             }
         });
-        ImageButton btn_for_choose_bottle4 = findViewById(R.id.chooseBottle_Bottle4_btn);
+
         btn_for_choose_bottle4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 creatingDiary.setBottle_kind(4);
+                btn_for_choose_bottle1.setImageResource(R.drawable.ic_glass1);
+                btn_for_choose_bottle2.setImageResource(R.drawable.ic_glass2);
+                btn_for_choose_bottle3.setImageResource(R.drawable.ic_glass3);
+                btn_for_choose_bottle4.setImageResource(R.drawable.ic_glass4_chosen);
             }
         });
 
