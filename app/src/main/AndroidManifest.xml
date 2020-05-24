@@ -9,27 +9,26 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".OwnDiary">
+        <activity android:name=".OwnDiary" android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
-        <activity android:name=".DiaryReading"></activity>
-        <activity android:name=".LoginPage"></activity>
-        <activity android:name=".RandomDiary"></activity>
-        <activity android:name=".RegisterPage"></activity>
-        <activity android:name=".UserInfo"></activity>
-        <activity android:name=".DcChooseWay"></activity>
-        <activity android:name=".DiaryCreate"></activity>
-        <activity android:name=".DcBottle"></activity>
-        <activity android:name=".DcStir"></activity>
-        <activity android:name=".DcBaseWine"></activity>
-        <activity android:name=".DcFinal"></activity>
-        <activity android:name=".DcText"></activity>
+        <activity android:name=".DiaryReading" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".LoginPage" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".RandomDiary" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".RegisterPage" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".UserInfo" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".DcChooseWay" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".DcBottle" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".DcStir" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".DcBaseWine" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".DcFinal" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".DcText" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -56,6 +56,7 @@ public class DcFinal extends AppCompatActivity {
                 finalDlist.add(creatingDiary);
                 try {
                     mDFH.saveDiaryListToFile("diary_list_storage", finalDlist);
+                    mDFH.generateDiarySVG(creatingDiary.getDiary_title(), creatingDiary);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

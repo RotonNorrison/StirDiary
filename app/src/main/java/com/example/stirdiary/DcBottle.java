@@ -13,8 +13,10 @@ public class DcBottle extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.diary_creation_bottle);
-        final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
+        final Diary creatingDiary = new Diary();
         creatingDiary.showInfo();
+        //图片生成
+        final DiaryFileHelper mDFH = new DiaryFileHelper(getApplicationContext());
         //四个酒的按钮事件
         final ImageButton btn_for_choose_bottle1 = findViewById(R.id.chooseBottle_Bottle1_btn);
         final ImageButton btn_for_choose_bottle2 = findViewById(R.id.chooseBottle_Bottle2_btn);
@@ -24,10 +26,10 @@ public class DcBottle extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 creatingDiary.setBottle_kind(1);
-                btn_for_choose_bottle1.setImageResource(R.drawable.ic_glass1_chosen);
-                btn_for_choose_bottle2.setImageResource(R.drawable.ic_glass2);
-                btn_for_choose_bottle3.setImageResource(R.drawable.ic_glass3);
-                btn_for_choose_bottle4.setImageResource(R.drawable.ic_glass4);
+                btn_for_choose_bottle1.setBackgroundResource(R.drawable.ic_glass1_chosen);
+                btn_for_choose_bottle2.setBackgroundResource(R.drawable.ic_glass2);
+                btn_for_choose_bottle3.setBackgroundResource(R.drawable.ic_glass3);
+                btn_for_choose_bottle4.setBackgroundResource(R.drawable.ic_glass4);
             }
         });
 
@@ -35,10 +37,10 @@ public class DcBottle extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 creatingDiary.setBottle_kind(2);
-                btn_for_choose_bottle1.setImageResource(R.drawable.ic_glass1);
-                btn_for_choose_bottle2.setImageResource(R.drawable.ic_glass2_chosen);
-                btn_for_choose_bottle3.setImageResource(R.drawable.ic_glass3);
-                btn_for_choose_bottle4.setImageResource(R.drawable.ic_glass4);
+                btn_for_choose_bottle1.setBackgroundResource(R.drawable.ic_glass1);
+                btn_for_choose_bottle2.setBackgroundResource(R.drawable.ic_glass2_chosen);
+                btn_for_choose_bottle3.setBackgroundResource(R.drawable.ic_glass3);
+                btn_for_choose_bottle4.setBackgroundResource(R.drawable.ic_glass4);
             }
         });
 
@@ -46,10 +48,10 @@ public class DcBottle extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 creatingDiary.setBottle_kind(3);
-                btn_for_choose_bottle1.setImageResource(R.drawable.ic_glass1);
-                btn_for_choose_bottle2.setImageResource(R.drawable.ic_glass2);
-                btn_for_choose_bottle3.setImageResource(R.drawable.ic_glass3_chosen);
-                btn_for_choose_bottle4.setImageResource(R.drawable.ic_glass4);
+                btn_for_choose_bottle1.setBackgroundResource(R.drawable.ic_glass1);
+                btn_for_choose_bottle2.setBackgroundResource(R.drawable.ic_glass2);
+                btn_for_choose_bottle3.setBackgroundResource(R.drawable.ic_glass3_chosen);
+                btn_for_choose_bottle4.setBackgroundResource(R.drawable.ic_glass4);
             }
         });
 
@@ -57,10 +59,10 @@ public class DcBottle extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 creatingDiary.setBottle_kind(4);
-                btn_for_choose_bottle1.setImageResource(R.drawable.ic_glass1);
-                btn_for_choose_bottle2.setImageResource(R.drawable.ic_glass2);
-                btn_for_choose_bottle3.setImageResource(R.drawable.ic_glass3);
-                btn_for_choose_bottle4.setImageResource(R.drawable.ic_glass4_chosen);
+                btn_for_choose_bottle1.setBackgroundResource(R.drawable.ic_glass1);
+                btn_for_choose_bottle2.setBackgroundResource(R.drawable.ic_glass2);
+                btn_for_choose_bottle3.setBackgroundResource(R.drawable.ic_glass3);
+                btn_for_choose_bottle4.setBackgroundResource(R.drawable.ic_glass4_chosen);
             }
         });
 
@@ -74,6 +76,11 @@ public class DcBottle extends AppCompatActivity {
                 Intent it_for_choose_base = new Intent(DcBottle.this, DcBaseWine.class);
                 it_for_choose_base.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_choose_base);
+                try {
+                    mDFH.generateDiarySVG("temp", creatingDiary);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 finish();
             }
         });

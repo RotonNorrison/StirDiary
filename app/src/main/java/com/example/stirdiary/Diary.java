@@ -18,7 +18,7 @@ public class Diary implements Serializable {
     private int stir_way;
 
 
-    public String getDiary_title() {
+    final public String getDiary_title() {
         return diary_title;
     }
 

@@ -1,6 +1,8 @@
 package com.example.stirdiary;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -31,11 +33,13 @@ public class OwnDiary extends AppCompatActivity {
         num -= 3;
         for (int i = 0; i < temp; i++) {
             final Diary Diarytemp = Dlist.get(i);
+            String name = getApplicationContext().getFilesDir().getPath() + Diarytemp.getDiary_title();
+
             container = findViewById(R.id.container1);
             ImageView child = new ImageView(this);
-            child.setImageResource(R.drawable.diaryicon);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 400);
-            params.setMargins(30, 30, 30, 30);
+            child.setImageURI(Uri.parse(name));
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 200);
+            params.setMargins(5, 0, 5, 0);
             child.setLayoutParams(params);
             child.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -51,11 +55,12 @@ public class OwnDiary extends AppCompatActivity {
         num -= 3;
         for (int i = 0; i < temp; i++) {
             final Diary Diarytemp = Dlist.get(i + 3);
+            String name = getApplicationContext().getFilesDir().getPath() + Diarytemp.getDiary_title();
             container = findViewById(R.id.container2);
             ImageView child = new ImageView(this);
-            child.setImageResource(R.drawable.diaryicon);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 400);
-            params.setMargins(30, 30, 30, 30);
+            child.setImageURI(Uri.parse(name));
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 200);
+            params.setMargins(5, 0, 5, 0);
             child.setLayoutParams(params);
             child.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -71,11 +76,12 @@ public class OwnDiary extends AppCompatActivity {
         num -= 3;
         for (int i = 0; i < temp; i++) {
             final Diary Diarytemp = Dlist.get(i + 6);
+            String name = getApplicationContext().getFilesDir().getPath() + Diarytemp.getDiary_title();
             container = findViewById(R.id.container3);
             ImageView child = new ImageView(this);
-            child.setImageResource(R.drawable.diaryicon);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 400);
-            params.setMargins(30, 30, 30, 30);
+            child.setImageURI(Uri.parse(name));
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 200);
+            params.setMargins(5, 0, 5, 0);
             child.setLayoutParams(params);
             child.setOnClickListener(new View.OnClickListener() {
                 @Override
