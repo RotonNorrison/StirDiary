@@ -25,12 +25,13 @@ public class DcBaseWine extends AppCompatActivity {
 
         final String[] winename = new String[1];
         final Double[] volume = new Double[1];
-
+        //图片生成
+        final DiaryFileHelper mDFH = new DiaryFileHelper(getApplicationContext());
 
         //酒添加
         final SeekBar wineSeekBar = findViewById(R.id.chooseBase_wine_amount_seekbar);
         final TextView wineAmountText = findViewById(R.id.chooseBase_wine_amount_text);
-        final Button addWineButton=findViewById(R.id.chooseBase_wine_addbtn);
+        final Button addWineButton = findViewById(R.id.chooseBase_wine_addbtn);
         wineSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -87,10 +88,15 @@ public class DcBaseWine extends AppCompatActivity {
 //                });
 
                 //判定数量
-                volume[0] =(double) wineSeekBar.getProgress();
+                volume[0] = (double) wineSeekBar.getProgress();
 
                 //加入winelist
                 creatingDiary.addWine(winename[0], volume[0]);
+                try {
+                    mDFH.generateDiarySVG("temp", creatingDiary);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -150,10 +156,15 @@ public class DcBaseWine extends AppCompatActivity {
 //                });
 
                 //判定数量
-                volume[0] =(double) juiceSeekBar.getProgress();
+                volume[0] = (double) juiceSeekBar.getProgress();
 
                 //加入winelist
                 creatingDiary.addWine(winename[0], volume[0]);
+                try {
+                    mDFH.generateDiarySVG("temp", creatingDiary);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 

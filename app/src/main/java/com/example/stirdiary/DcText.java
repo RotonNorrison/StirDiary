@@ -15,6 +15,9 @@ public class DcText extends AppCompatActivity {
         setContentView(R.layout.diary_creation_text);
         final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
         creatingDiary.showInfo();
+        //图片生成
+        final DiaryFileHelper mDFH = new DiaryFileHelper(getApplicationContext());
+
         //下一步按钮事件绑定
         Button btn_for_continue_to_choose_stirway;
         btn_for_continue_to_choose_stirway = findViewById(R.id.creatingAddText_nextbtn);
@@ -22,9 +25,15 @@ public class DcText extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //获取文本内容
-                EditText editText =(EditText)findViewById(R.id.creatingAddText_editText);
-                String text=editText.getText().toString();
+                EditText editText = (EditText) findViewById(R.id.creatingAddText_editText);
+                String text = editText.getText().toString();
                 creatingDiary.setText(text);
+                try {
+                    mDFH.generateDiarySVG("temp", creatingDiary);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
                 //跳转下个界面
                 Intent it_for_choose_stirway = new Intent(DcText.this, DcChooseWay.class);
                 it_for_choose_stirway.putExtra("diaryInfo", creatingDiary);

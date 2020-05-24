@@ -14,7 +14,6 @@ public class DcChooseWay extends AppCompatActivity {
 
     private RadioGroup radioGroup = null;
     private RadioButton chooseStirWay_radiobtn_duihe, chooseStirWay_radiobtn_tiaohe, chooseStirWay_radiobtn_yaohe;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +43,6 @@ public class DcChooseWay extends AppCompatActivity {
                 }
             }
         });
-
-
         //下一步按钮事件绑定
         Button btn_for_continue_to_creating_final_preview;
         btn_for_continue_to_creating_final_preview =
