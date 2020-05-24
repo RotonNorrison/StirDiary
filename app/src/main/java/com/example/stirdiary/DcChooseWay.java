@@ -32,10 +32,10 @@ public class DcChooseWay extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 int id = group.getCheckedRadioButtonId();
                 switch (id) {
-                    case R.id.chooseStirWay_radiobtn_duihe:
+                    case R.id.chooseStirWay_radiobtn_tiaohe:
                         creatingDiary.setStirWay(1);
                         break;
-                    case R.id.chooseStirWay_radiobtn_tiaohe:
+                    case R.id.chooseStirWay_radiobtn_duihe:
                         creatingDiary.setStirWay(2);
                         break;
                     case R.id.chooseStirWay_radiobtn_yaohe:
