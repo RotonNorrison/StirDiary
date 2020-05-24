@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+import android.widget.ToggleButton;
+import android.widget.CompoundButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +17,16 @@ public class DcFinal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.diary_creation_final);
         final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
+
+        //分享按钮事件绑定
+        ToggleButton sharebtn;
+        sharebtn=findViewById(R.id.creatingFinal_sharebtn);
+        sharebtn.setOnCheckedChangeListener(new ToggleButton.OnCheckedChangeListener(){
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    creatingDiary.setShare_state(isChecked);
+            }
+        });
 
         //下一步按钮事件绑定
         Button btn_for_end_creating;
