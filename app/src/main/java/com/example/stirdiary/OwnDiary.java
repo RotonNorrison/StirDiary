@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -34,10 +35,9 @@ public class OwnDiary extends AppCompatActivity {
         for (int i = 0; i < temp; i++) {
             final Diary Diarytemp = Dlist.get(i);
             String name = getApplicationContext().getFilesDir().getPath() + Diarytemp.getDiary_title();
-
             container = findViewById(R.id.container1);
             ImageView child = new ImageView(this);
-            child.setImageURI(Uri.parse(name));
+            child.setImageResource(R.drawable.ic_glass1);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 200);
             params.setMargins(5, 0, 5, 0);
             child.setLayoutParams(params);
@@ -58,7 +58,7 @@ public class OwnDiary extends AppCompatActivity {
             String name = getApplicationContext().getFilesDir().getPath() + Diarytemp.getDiary_title();
             container = findViewById(R.id.container2);
             ImageView child = new ImageView(this);
-            child.setImageURI(Uri.parse(name));
+            child.setImageResource(R.drawable.ic_glass1);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 200);
             params.setMargins(5, 0, 5, 0);
             child.setLayoutParams(params);
@@ -79,7 +79,7 @@ public class OwnDiary extends AppCompatActivity {
             String name = getApplicationContext().getFilesDir().getPath() + Diarytemp.getDiary_title();
             container = findViewById(R.id.container3);
             ImageView child = new ImageView(this);
-            child.setImageURI(Uri.parse(name));
+            child.setImageResource(R.drawable.ic_glass1);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 200);
             params.setMargins(5, 0, 5, 0);
             child.setLayoutParams(params);
@@ -98,6 +98,7 @@ public class OwnDiary extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.own_diary_page);
         addWine();
     }

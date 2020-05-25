@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="#FFFFFF"
+>
 
     <SeekBar
-        android:id="@+id/chooseBase_wine_amount_seekbar"
-        android:layout_width="247dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:max="100"
-        android:progress="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Scroll_wine" />
+            android:id="@+id/chooseBase_wine_amount_seekbar"
+            android:layout_width="247dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginLeft="28dp"
+            android:max="100"
+            android:progress="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Scroll_wine"/>
 
     <Button
         android:id="@+id/chooseBase_wine_addbtn"
@@ -46,15 +48,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/chooseBase_nextbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="576dp"
-        android:text="Next"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/chooseBase_nextbtn"
+            android:layout_width="102dp"
+            android:layout_height="92dp"
+            android:layout_marginStart="144dp"
+            android:layout_marginLeft="144dp"
+            android:layout_marginTop="600dp"
+            android:background="@drawable/next"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <HorizontalScrollView
         android:id="@+id/Scroll_wine"
@@ -79,58 +81,64 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton_brandy"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_brandy_selector"
-                    android:tag="brandy" />
+                        android:id="@+id/radioButton_brandy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="40dp"
+                        android:button="@null"
+                        android:background="@drawable/ic_brandy_selector"
+                        android:tag="brandy"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton_gin"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_gin_selector"
-                    android:tag="gin"/>
+                        android:id="@+id/radioButton_gin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="40dp"
+                        android:button="@null"
+                        android:background="@drawable/ic_gin_selector"
+                        android:tag="gin"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton_rum"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_rum_selector"
-                    android:tag="rum"/>
+                        android:id="@+id/radioButton_rum"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="40dp"
+                        android:button="@null"
+                        android:background="@drawable/ic_rum_selector"
+                        android:tag="rum"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton_tequila"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_tequila_selector"
-                    android:tag="tequila" />
+                        android:id="@+id/radioButton_tequila"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="40dp"
+                        android:button="@null"
+                        android:background="@drawable/ic_tequila_selector"
+                        android:tag="tequila"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton_vodka"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_vodka_selector"
-                    android:tag="vodka" />
+                        android:id="@+id/radioButton_vodka"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="40dp"
+                        android:button="@null"
+                        android:drawableBottom="@drawable/ic_vodka_selector"
+                        android:tag="vodka"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton_whisky"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_whisky_selector"
-                    android:tag="whisky" />
+                        android:id="@+id/radioButton_whisky"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginRight="40dp"
+                        android:button="@null"
+                        android:drawableBottom="@drawable/ic_whisky_selector"
+                        android:tag="whisky"/>
             </RadioGroup>
 
         </LinearLayout>
@@ -159,13 +167,13 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton_blackberry"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_blackberry_selector"
-                    android:tag="blackberry" />
+                        android:id="@+id/radioButton_blackberry"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:background="@drawable/ic_blackberry_selector"
+                        android:tag="blackberry"/>
 
                 <RadioButton
                     android:id="@+id/radioButton_cherry"

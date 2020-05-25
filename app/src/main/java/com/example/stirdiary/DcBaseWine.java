@@ -3,6 +3,7 @@ package com.example.stirdiary;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -16,7 +17,9 @@ public class DcBaseWine extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.diary_creation_basewine);
+
         final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
         creatingDiary.showInfo();
 
@@ -62,7 +65,7 @@ public class DcBaseWine extends AppCompatActivity {
 //                //判定选定的wine
 //                radioGroupWine.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 //                    @Override
-//                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                    publicc void onCheckedChanged(RadioGroup group, int checkedId) {
 //                        int id=group.getCheckedRadioButtonId();
 //                        switch (id){
 //                            case  R.id.radioButton_brandy:
@@ -133,7 +136,7 @@ public class DcBaseWine extends AppCompatActivity {
 //                //判定选定的juice
 //                radioGroupJuice.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 //                    @Override
-//                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                    publicc void onCheckedChanged(RadioGroup group, int checkedId) {
 //                        int id=group.getCheckedRadioButtonId();
 //                        switch (id){
 //                            case  R.id.radioButton_blackberry:
