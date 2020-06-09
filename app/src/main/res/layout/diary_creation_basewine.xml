@@ -2,69 +2,51 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chooseBase_background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#E6B944">
 
-    <SeekBar
-        android:id="@+id/chooseBase_wine_amount_seekbar"
-        android:layout_width="247dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:max="100"
-        android:progress="0"
+    <ImageView
+        android:id="@+id/chooseBase_img_background1"
+        android:layout_width="461dp"
+        android:layout_height="517dp"
+        android:layout_marginTop="124dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Scroll_wine" />
+        app:layout_constraintTop_toBottomOf="@id/chooseBase_img_text1"
+        app:srcCompat="@drawable/ic_blank" />
 
-    <Button
-        android:id="@+id/chooseBase_wine_addbtn"
-        android:layout_width="64dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:text="加入"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Scroll_wine" />
-
-    <TextView
-        android:id="@+id/chooseBase_wine_amount_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
-        android:text="a"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/chooseBase_juice_amount_seekbar"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="选基酒"
+    <ImageView
+        android:id="@+id/chooseBase_img_text2"
+        android:layout_width="73dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="97dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/chooseBase_img_text1"
+        app:srcCompat="@drawable/ic_choosebase_basetext" />
 
-    <Button
-        android:id="@+id/chooseBase_nextbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="576dp"
-        android:text="Next"
+    <ImageView
+        android:id="@+id/chooseBase_img_text1"
+        android:layout_width="212dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_choosaebase_choosetext" />
 
     <HorizontalScrollView
         android:id="@+id/Scroll_wine"
-        android:layout_width="407dp"
-        android:layout_height="190dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="380dp"
+        android:layout_height="127dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@id/chooseBase_img_text2">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -72,7 +54,7 @@
             android:orientation="horizontal">
 
             <RadioGroup
-                android:id="@+id/radio_group_wine"
+                android:id="@+id/chooseBase_RadioGroup"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -82,42 +64,47 @@
                     android:id="@+id/radioButton_brandy"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
                     android:layout_weight="1"
+                    android:background="@drawable/ic_brandy_selector"
                     android:button="@null"
-                    android:drawableBottom="@drawable/ic_brandy_selector"
                     android:tag="brandy" />
 
                 <RadioButton
                     android:id="@+id/radioButton_gin"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
                     android:layout_weight="1"
+                    android:background="@drawable/ic_gin_selector"
                     android:button="@null"
-                    android:drawableBottom="@drawable/ic_gin_selector"
-                    android:tag="gin"/>
+                    android:tag="gin" />
 
                 <RadioButton
                     android:id="@+id/radioButton_rum"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
                     android:layout_weight="1"
+                    android:background="@drawable/ic_rum_selector"
                     android:button="@null"
-                    android:drawableBottom="@drawable/ic_rum_selector"
-                    android:tag="rum"/>
+                    android:tag="rum" />
 
                 <RadioButton
                     android:id="@+id/radioButton_tequila"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
                     android:layout_weight="1"
+                    android:background="@drawable/ic_tequila_selector"
                     android:button="@null"
-                    android:drawableBottom="@drawable/ic_tequila_selector"
                     android:tag="tequila" />
 
                 <RadioButton
                     android:id="@+id/radioButton_vodka"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
                     android:layout_weight="1"
                     android:button="@null"
                     android:drawableBottom="@drawable/ic_vodka_selector"
@@ -127,129 +114,60 @@
                     android:id="@+id/radioButton_whisky"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginRight="40dp"
                     android:layout_weight="1"
                     android:button="@null"
                     android:drawableBottom="@drawable/ic_whisky_selector"
                     android:tag="whisky" />
-            </RadioGroup>
 
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <HorizontalScrollView
-        android:id="@+id/Scroll_juice"
-        android:layout_width="448dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="360dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <RadioGroup
-                android:id="@+id/radio_group_juice"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/radioButton_blackberry"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_blackberry_selector"
-                    android:tag="blackberry" />
-
-                <RadioButton
-                    android:id="@+id/radioButton_cherry"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_cherry_selector"
-                    android:tag="cherry" />
-
-                <RadioButton
-                    android:id="@+id/radioButton_lime"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_lime_selector"
-                    android:tag="lime" />
-
-                <RadioButton
-                    android:id="@+id/radioButton_orange"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_orange_selector"
-                    android:tag="orange" />
-
-                <RadioButton
-                    android:id="@+id/radioButton_triple_sec"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_triple_sec_selector"
-                    android:tag="triple_sec" />
             </RadioGroup>
 
         </LinearLayout>
     </HorizontalScrollView>
 
     <Button
-        android:id="@+id/chooseBase_juice_addbtn"
-        android:layout_width="64dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:text="加入"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Scroll_juice" />
-
-    <SeekBar
-        android:id="@+id/chooseBase_juice_amount_seekbar"
-        android:layout_width="247dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="296dp"
-        android:max="100"
-        android:progress="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Scroll_wine" />
-
-    <TextView
-        android:id="@+id/chooseBase_juice_amount_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="524dp"
-        android:text="a"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/chooseBase_juice_amount_seekbar"
+        android:id="@+id/chooseBase_nextbtn"
+        android:layout_width="61dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginLeft="59dp"
+        android:layout_marginTop="96dp"
+        android:background="@null"
+        android:drawableBottom="@drawable/ic_next"
+        app:layout_constraintStart_toEndOf="@+id/chooseBase_img_text1"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/chooseBase_intro_text"
-        android:layout_width="385dp"
-        android:layout_height="119dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+    <SeekBar
+        android:id="@+id/chooseBase_wine_amount_seekbar"
+        android:layout_width="196dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
         android:layout_marginTop="52dp"
-        android:text="介绍"
-        android:textSize="30sp"
+        android:max="100"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Scroll_wine" />
+
+    <TextView
+        android:id="@+id/chooseBase_wine_amount_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toEndOf="@+id/chooseBase_wine_amount_seekbar"
+        app:layout_constraintTop_toBottomOf="@+id/chooseBase_nextbtn" />
+
+    <Button
+        android:id="@+id/chooseBase_wine_addbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="28dp"
+        android:background="@null"
+        android:drawableBottom="@drawable/ic_add"
+        app:layout_constraintStart_toEndOf="@id/chooseBase_img_text2"
+        app:layout_constraintTop_toBottomOf="@+id/chooseBase_wine_amount_seekbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
