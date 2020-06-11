@@ -22,8 +22,10 @@ public class DcFinal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.diary_creation_final);
+
         final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
         final DiaryFileHelper mDFH = new DiaryFileHelper(getApplicationContext());
+
         List<Diary> Dlist = null;
         try {
             Dlist = mDFH.readDiaryListFromFile("diary_list_storage");
