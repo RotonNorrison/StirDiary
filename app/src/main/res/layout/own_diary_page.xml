@@ -4,18 +4,20 @@
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
-    <TextView android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
+                                                   android:layout_height="match_parent"
+                                                   android:background="#FFFFFF">
+    <ImageView android:layout_width="409dp" android:layout_height="727dp"
+               android:id="@+id/own_diary_page_bakground"
+               android:src="@drawable/ic_ownstore"
+               app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="match_parent"
               android:text="My Diary"
               android:layout_centerHorizontal="true"
               android:textSize="30sp"
               app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
               app:layout_constraintEnd_toEndOf="parent"/>
-    <ImageView android:layout_width="409dp" android:layout_height="727dp"
-               android:id="@+id/own_diary_page_bakground"
-               android:background="@drawable/ic_ownstore"
-               app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
     <LinearLayout android:layout_width="327dp" android:layout_height="79dp"
                   android:id="@+id/container1" android:orientation="horizontal"
                   app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"

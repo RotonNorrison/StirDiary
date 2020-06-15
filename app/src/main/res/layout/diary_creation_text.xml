@@ -1,41 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Addtext"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E6B944"
+>
+    <ImageView android:layout_width="275dp" android:layout_height="86dp"
+               app:srcCompat="@drawable/ic_addtextheader" app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="20dp"
+               android:scaleType="fitCenter"
+               android:layout_marginTop="64dp" android:layout_marginStart="24dp" android:id="@+id/imageViewtext"/>
+    <ImageView android:layout_width="393dp" android:layout_height="600dp"
+               app:srcCompat="@drawable/ic_newboard" app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               android:scaleType="fitXY"
+               android:id="@+id/imageViewtext2" app:layout_constraintTop_toBottomOf="@+id/imageViewtext"
+               android:layout_marginTop="60dp"/>
     <Button
-        android:id="@+id/creatingAddText_nextbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="500dp"
-        android:text="Next"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/creatingAddText_nextbtn"
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="84dp"
+            android:background="@null"
+            android:drawableBottom="@drawable/ic_next"
 
-    <EditText
-        android:id="@+id/creatingAddText_editText"
-        android:layout_width="210dp"
-        android:layout_height="146dp"
-        android:layout_marginStart="103dp"
-        android:layout_marginLeft="103dp"
-        android:layout_marginTop="215dp"
-        android:ems="10"
-        android:inputType="textLongMessage"
-        android:selectAllOnFocus="true"
-        android:text="输入你的心情"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/imageViewtext"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewtext2"
+            app:layout_constraintVertical_bias="0.68" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.29"/>
+    <com.example.stirdiary.NoteEditor android:layout_width="match_parent" android:layout_height="500dp"
+                                      android:id="@+id/creatingAddText_editText"
+                                      app:layout_constraintStart_toStartOf="parent"
+                                      app:layout_constraintEnd_toEndOf="parent"
+                                      app:layout_constraintTop_toTopOf="parent"
+                                      app:layout_constraintBottom_toBottomOf="parent" android:layout_marginLeft="16dp"
+                                      android:layout_marginStart="16dp" android:layout_marginRight="16dp"
+                                      android:layout_marginEnd="16dp" android:layout_marginTop="60dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

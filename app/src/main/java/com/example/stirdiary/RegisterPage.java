@@ -2,6 +2,7 @@ package com.example.stirdiary;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +10,7 @@ public class RegisterPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.register_page);
         Button btn_for_regcof;
         btn_for_regcof = findViewById(R.id.register_regbtn);
