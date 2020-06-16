@@ -103,8 +103,14 @@ public class DiaryThumbnailHelper {
 //        String docStr = generateSVG(doc);
 //        FileHelper fh=new FileHelper(mContext);
 //        fh.save(fileName, docStr);
+        ArrayList<AddWine> winelist = diary.getWinelist();
+        double totalVolume = 0;
+        for (AddWine wine : winelist) {
+            totalVolume += wine.getVolume();
+        }
 
         Node canvas = doc.getElementsByTagName("g").item(0);
+        Node defs = doc.getElementsByTagName("defs").item(0);
 //        System.out.println(canvas.getNodeName());
 
         Map<String, String> wineColor = new HashMap<>();
@@ -124,23 +130,71 @@ public class DiaryThumbnailHelper {
         double[] YE = new double[]{135,65.5,96,188.8};
         double[] YL = new double[]{110,51.5,76,153.8};
 
-        ArrayList<AddWine> winelist = diary.getWinelist();
-        double totalVolume = 0;
-        for (AddWine wine : winelist) {
-            totalVolume += wine.getVolume();
-        }
-        double xstart=0, xlength=XL[bottle_kind], yend=YE[bottle_kind], ylength=YL[bottle_kind];
-        double currentVolume=0;
-        for (AddWine addWine : winelist) {
+        double xstart=0, xlength=XL[bottle_kind-1], yend=YE[bottle_kind-1], ylength=YL[bottle_kind-1];
+
+        if(diary.getStirWay()==1) {
+            double currentVolume = 0;
+            for (AddWine addWine : winelist) {
+                Element rect = doc.createElement("rect");
+                rect.setAttribute("mask", "url(#water)");
+                rect.setAttribute("x", Double.toString(xstart));
+                rect.setAttribute("width", Double.toString(xlength));
+                rect.setAttribute("fill", wineColor.get(addWine.getWinename()));
+                rect.setAttribute("y", Double.toString(yend - (addWine.getVolume() + currentVolume) / totalVolume * ylength));
+                rect.setAttribute("height", Double.toString(addWine.getVolume() / totalVolume * ylength));
+                canvas.insertBefore(rect, canvas.getFirstChild());
+                currentVolume += addWine.getVolume();
+            }
+        } else if (diary.getStirWay()==2) {
+            double currentVolume = 0;
             Element rect = doc.createElement("rect");
             rect.setAttribute("mask", "url(#water)");
             rect.setAttribute("x", Double.toString(xstart));
             rect.setAttribute("width", Double.toString(xlength));
-            rect.setAttribute("fill", wineColor.get(addWine.getWinename()));
-            rect.setAttribute("y", Double.toString(yend - (addWine.getVolume() + currentVolume) / totalVolume * ylength));
-            rect.setAttribute("height", Double.toString(addWine.getVolume() / totalVolume * ylength));
+            rect.setAttribute("fill", "url(#winecolor)");
+            rect.setAttribute("y", Double.toString(yend-ylength));
+            rect.setAttribute("height", Double.toString(ylength));
             canvas.insertBefore(rect, canvas.getFirstChild());
-            currentVolume += addWine.getVolume();
+
+            Element linearGradient = doc.createElement("linearGradient");
+            linearGradient.setAttribute("id", "winecolor");
+            linearGradient.setAttribute("x1", "0%");
+            linearGradient.setAttribute("x2", "0%");
+            linearGradient.setAttribute("y1", "0%");
+            linearGradient.setAttribute("y2", "100%");
+            defs.insertBefore(linearGradient, defs.getFirstChild());
+
+            for (AddWine addWine : winelist) {
+                Element stop = doc.createElement("stop");
+                stop.setAttribute("stop-color", wineColor.get(addWine.getWinename()));
+                stop.setAttribute("stop-opacity", "1");
+                stop.setAttribute("offset", Double.toString(100-(currentVolume + addWine.getVolume()/2) / totalVolume * 100)+"%");
+                linearGradient.insertBefore(stop, linearGradient.getFirstChild());
+                currentVolume += addWine.getVolume();
+            }
+        } else if (diary.getStirWay()==3) {
+            double r=0,g=0,b=0;
+            for (AddWine addWine : winelist) {
+                String colorCode=wineColor.get(addWine.getWinename());
+                r+=(Long.parseLong(colorCode.substring(1,3),16))*addWine.getVolume();
+                g+=(Long.parseLong(colorCode.substring(3,5),16))*addWine.getVolume();
+                b+=(Long.parseLong(colorCode.substring(5,7),16))*addWine.getVolume();
+            }
+            System.out.println(r);
+            System.out.println(g);
+            System.out.println(b);
+            Element rect = doc.createElement("rect");
+            rect.setAttribute("mask", "url(#water)");
+            rect.setAttribute("x", Double.toString(xstart));
+            rect.setAttribute("width", Double.toString(xlength));
+            rect.setAttribute("fill", String.format("rgb(%d,%d,%d)",
+                    Math.round(r/totalVolume),
+                    Math.round(g/totalVolume),
+                    Math.round(b/totalVolume)));
+            rect.setAttribute("y",
+                    Double.toString(yend-ylength));
+            rect.setAttribute("height", Double.toString(ylength));
+            canvas.insertBefore(rect, canvas.getFirstChild());
         }
 
         String docStr = generateSVG(doc);

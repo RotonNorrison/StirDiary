@@ -13,6 +13,8 @@
 	<rect fill="#FFFFFF" stroke="#000000" stroke-width="3" stroke-miterlimit="10" x="1.5" y="1.5" width="82.3" height="188.8"/>
 </mask>
 </defs>
+<g>
 <rect x="1.5" y="1.5" class="st0" width="82.3" height="196.3"/>
 <line class="st1" x1="6.3" y1="192.8" x2="78.7" y2="192.8"/>
+</g>
 </svg>
