@@ -46,27 +46,27 @@ public class DcBaseWine extends AppCompatActivity {
                 switch (id) {
                     case R.id.radioButton_brandy:
                         background0.setBackgroundColor(Color.parseColor("#c7b299"));
-                        background1.setBackgroundColor(Color.parseColor("#82272d"));
+                        //background1.setBackgroundColor(Color.parseColor("#82272d"));
                         break;
                     case R.id.radioButton_gin:
                         background0.setBackgroundColor(Color.parseColor("#c92700"));
-                        background1.setBackgroundColor(Color.parseColor("#f2f2f2"));
+                        //background1.setBackgroundColor(Color.parseColor("#f2f2f2"));
                         break;
                     case R.id.radioButton_rum:
                         background0.setBackgroundColor(Color.parseColor("#fbb097"));
-                        background1.setBackgroundColor(Color.parseColor("#f18258"));
+                        //background1.setBackgroundColor(Color.parseColor("#f18258"));
                         break;
                     case R.id.radioButton_tequila:
                         background0.setBackgroundColor(Color.parseColor("#b5e7ad"));
-                        background1.setBackgroundColor(Color.parseColor("#fffb85"));
+                        //background1.setBackgroundColor(Color.parseColor("#fffb85"));
                         break;
                     case R.id.radioButton_vodka:
                         background0.setBackgroundColor(Color.parseColor("#29abe2"));
-                        background1.setBackgroundColor(Color.parseColor("#f2f2f2"));
+                        //background1.setBackgroundColor(Color.parseColor("#f2f2f2"));
                         break;
                     case R.id.radioButton_whisky:
                         background0.setBackgroundColor(Color.parseColor("#730028"));
-                        background1.setBackgroundColor(Color.parseColor("#f17324"));
+                        //background1.setBackgroundColor(Color.parseColor("#f17324"));
                         break;
                 }
             }
