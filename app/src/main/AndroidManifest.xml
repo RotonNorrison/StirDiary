@@ -30,6 +30,7 @@
         <activity android:name=".DcFinal"></activity>
         <activity android:name=".DcText"></activity>
         <activity android:name=".Dcstir"></activity>
+        <activity android:name=".DcJuice"></activity>
     </application>
 
 </manifest>

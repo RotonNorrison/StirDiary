@@ -1,5 +1,6 @@
 package com.example.stirdiary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -29,17 +30,17 @@ public class DcFinal extends AppCompatActivity {
         setContentView(R.layout.diary_creation_final);
 
         final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
-        final DiaryFileHelper mDFH = new DiaryFileHelper(getApplicationContext());
+        /**  final DiaryFileHelper mDFH = new DiaryFileHelper(getApplicationContext());
 
-        List<Diary> Dlist = null;
-        try {
-            Dlist = mDFH.readDiaryListFromFile("diary_list_storage");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (Dlist == null) {
-            Dlist = new ArrayList<Diary>();
-        }
+         List<Diary> Dlist = null;
+         try {
+         Dlist = mDFH.readDiaryListFromFile("diary_list_storage");
+         } catch (IOException e) {
+         e.printStackTrace();
+         }
+         if (Dlist == null) {
+         Dlist = new ArrayList<Diary>();
+         }*/
         //分享按钮事件绑定
         ToggleButton sharebtn;
         sharebtn = findViewById(R.id.creatingFinal_sharebtn);
@@ -58,7 +59,7 @@ public class DcFinal extends AppCompatActivity {
         //下一步按钮事件绑定
         ImageView btn_for_end_creating;
         btn_for_end_creating = findViewById(R.id.creatingFinal_endbtn);
-        final List<Diary> finalDlist = Dlist;
+        /**final List<Diary> finalDlist = Dlist;*/
         btn_for_end_creating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,8 +71,6 @@ public class DcFinal extends AppCompatActivity {
 
                 DBDiaryDao dbDiaryDao=new DBDiaryDao(DcFinal.this);
                 dbDiaryDao.insert(creatingDiary);
-                Intent it_for_choose_stirway = new Intent(DcFinal.this, MainActivity.class);
-                startActivity(it_for_choose_stirway);
                 finish();
             }
         });

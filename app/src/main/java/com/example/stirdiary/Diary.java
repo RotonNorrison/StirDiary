@@ -19,6 +19,7 @@ public class Diary implements Serializable {
     private int share_state;
     private int stir_way;
 
+
     public Diary(){
         uid=UUIDGenerator.getUUID();
         diary_title="";
@@ -51,8 +52,8 @@ public class Diary implements Serializable {
         return winelist;
     }
 
-    public void addWine(String wine_name, double volume) {
-        AddWine temp = new AddWine(wine_name, volume);
+    public void addWine(int id, int volume) {
+        AddWine temp = new AddWine(id, volume);
         winelist.add(temp);
     }
 
