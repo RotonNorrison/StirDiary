@@ -1,66 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Final"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/creatingFinal_endbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
-        android:layout_marginTop="496dp"
-        android:text="回到主界面"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complete your Diary"
+            android:textSize="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/textView"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.06999999"/>
     <EditText
-        android:id="@+id/creatingFinal_addTitle_editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
-        android:layout_marginTop="204dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="给你的日记取个名字吧"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/creatingFinal_sharetext"
-        android:layout_width="162dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginTop="156dp"
-        android:text="你想要分享它吗？"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/creatingFinal_addTitle_editText" />
-
+            android:id="@+id/creatingFinal_addTitle_editText"
+            android:layout_width="180dp"
+            android:layout_height="36dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="给你的日记取个名字吧"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:background="#00FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.19999999"/>
     <ToggleButton
-        android:id="@+id/creatingFinal_sharebtn"
-        android:layout_width="154dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:text="ToggleButton"
-        android:textOff="这是我独享的moment"
-        android:textOn="让大家看看"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/creatingFinal_sharetext" />
-
+            android:layout_width="160dp" android:layout_height="160dp"
+            android:textOn="@null"
+            android:textOff="@null"
+            android:background="@drawable/sharestate"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="32dp" android:layout_marginStart="32dp" android:layout_marginBottom="32dp"
+            android:id="@+id/creatingFinal_sharebtn"
+            android:stateListAnimator="@null"
+    />
+    <ImageView android:layout_width="160dp" android:layout_height="160dp"
+               android:id="@+id/creatingFinal_endbtn"
+               app:srcCompat="@drawable/ic_save" app:layout_constraintStart_toEndOf="@+id/creatingFinal_sharebtn"
+               app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="32dp"
+               android:layout_marginLeft="32dp" android:layout_marginStart="32dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

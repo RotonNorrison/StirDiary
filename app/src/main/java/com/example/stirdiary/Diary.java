@@ -30,7 +30,7 @@ public class Diary implements Serializable {
     }
     public String getUid() { return uid; }
 
-    public String getDiary_title() {
+    final public String getDiary_title() {
         return diary_title;
     }
 

@@ -10,7 +10,7 @@ class FileHelper {
 
     private Context mContext;
 
-//    public FileHelper() {
+//    publicc FileHelper() {
 //    }
 
     public FileHelper(Context mContext) {

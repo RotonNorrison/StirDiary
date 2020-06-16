@@ -12,20 +12,13 @@ public class DiaryReading extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.diary_reading_page);
         //创建文件辅助类
-        DiaryFileHelper mFileHelper = new DiaryFileHelper(this);
+        DiaryFileHelper mFileHelper = new DiaryFileHelper(getApplicationContext());
         Diary myDiary = new Diary();
-        String name;
         String content;
 
         //获得日记内容
         Intent it = getIntent();
-        name = it.getStringExtra("filename");
-        try {
-            myDiary = mFileHelper.readDiaryFromFile(name);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        myDiary = (Diary) it.getSerializableExtra("file");
         content = myDiary.getText();
         TextView paper = findViewById(R.id.diary_reading_page_textPaper);
         paper.setText(content);
