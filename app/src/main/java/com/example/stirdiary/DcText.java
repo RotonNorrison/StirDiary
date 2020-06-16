@@ -30,6 +30,7 @@ public class DcText extends AppCompatActivity {
                 String text=editText.getText().toString();
                 try {
                     String sentiment = SentimentClassify.sentimentClassify(text);
+                    System.out.println(sentiment);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
