@@ -1,0 +1,17 @@
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="66px" height="220.2px" 
+	 style="overflow:scroll;enable-background:new 0 0 66 220.2;" xml:space="preserve">
+<defs>
+<mask id="water">
+	<rect x="1.5" y="1.5" fill="#000000" stroke="#000000" stroke-width="3" stroke-miterlimit="10" width="63" height="217.2"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="3" stroke-miterlimit="10" d="M33,135.7L33,135.7c-17.4,0-31.5-14.1-31.5-31.5V1.5h63v102.7C64.5,121.6,50.4,135.7,33,135.7z"/>
+</mask>
+</defs>
+<g>
+	<line fill="#FFFFFF" stroke="#4D245F" stroke-width="3" stroke-miterlimit="10" x1="33" y1="135.7" x2="33" y2="218.7"/>
+	<path fill="none" stroke="#4D245F" stroke-width="3" stroke-miterlimit="10" d="M33,135.7L33,135.7c-17.4,0-31.5-14.1-31.5-31.5V1.5h63v102.7C64.5,121.6,50.4,135.7,33,135.7z"/>
+	<line fill="none" stroke="#4D245F" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" x1="6.4" y1="218.7" x2="59.6" y2="218.7"/>
+</g>
+</svg>

@@ -1,23 +1,22 @@
 package com.example.stirdiary;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import com.caverock.androidsvg.SVG;
+import com.caverock.androidsvg.SVGImageView;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
 public class OwnDiary extends AppCompatActivity {
     private LinearLayout container;
 
-    public void addWine() {
+    public void addWine() throws Exception {
         String imgsrc;
         final String contentsrc;
         DiaryFileHelper mDFH = new DiaryFileHelper(getApplicationContext());
@@ -34,10 +33,22 @@ public class OwnDiary extends AppCompatActivity {
         num -= 3;
         for (int i = 0; i < temp; i++) {
             final Diary Diarytemp = Dlist.get(i);
-            String name = getApplicationContext().getFilesDir().getPath() + Diarytemp.getDiary_title();
-            container = findViewById(R.id.container1);
-            ImageView child = new ImageView(this);
-            child.setImageResource(R.drawable.ic_glass1);
+            String name = Diarytemp.getDiary_title() + ".svg";
+
+            DiaryThumbnailHelper mDTH = new DiaryThumbnailHelper(getApplicationContext());
+            mDTH.generateDiarySVG(name, Diarytemp);
+
+            FileInputStream input = getApplicationContext().openFileInput(name);
+            SVG svg = SVG.getFromInputStream(input);
+
+            container = findViewById(R.id.container2);
+
+            SVGImageView child = new SVGImageView(this);
+            child.setSVG(svg);
+//            ImageView child = new ImageView(this);
+//            child.setImageResource(R.drawable.ic_glass1);
+//            child.setImageURI(Uri.parse(name));
+
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 200);
             params.setMargins(5, 0, 5, 0);
             child.setLayoutParams(params);
@@ -55,10 +66,19 @@ public class OwnDiary extends AppCompatActivity {
         num -= 3;
         for (int i = 0; i < temp; i++) {
             final Diary Diarytemp = Dlist.get(i + 3);
-            String name = getApplicationContext().getFilesDir().getPath() + Diarytemp.getDiary_title();
+            String name = Diarytemp.getDiary_title() + ".svg";
+
+            DiaryThumbnailHelper mDTH = new DiaryThumbnailHelper(getApplicationContext());
+            mDTH.generateDiarySVG(name, Diarytemp);
+
+            FileInputStream input = getApplicationContext().openFileInput(name);
+            SVG svg = SVG.getFromInputStream(input);
+
             container = findViewById(R.id.container2);
-            ImageView child = new ImageView(this);
-            child.setImageResource(R.drawable.ic_glass1);
+
+            SVGImageView child = new SVGImageView(this);
+            child.setSVG(svg);
+
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 200);
             params.setMargins(5, 0, 5, 0);
             child.setLayoutParams(params);
@@ -76,10 +96,19 @@ public class OwnDiary extends AppCompatActivity {
         num -= 3;
         for (int i = 0; i < temp; i++) {
             final Diary Diarytemp = Dlist.get(i + 6);
-            String name = getApplicationContext().getFilesDir().getPath() + Diarytemp.getDiary_title();
-            container = findViewById(R.id.container3);
-            ImageView child = new ImageView(this);
-            child.setImageResource(R.drawable.ic_glass1);
+            String name = Diarytemp.getDiary_title() + ".svg";
+
+            DiaryThumbnailHelper mDTH = new DiaryThumbnailHelper(getApplicationContext());
+            mDTH.generateDiarySVG(name, Diarytemp);
+
+            FileInputStream input = getApplicationContext().openFileInput(name);
+            SVG svg = SVG.getFromInputStream(input);
+
+            container = findViewById(R.id.container2);
+
+            SVGImageView child = new SVGImageView(this);
+            child.setSVG(svg);
+
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(400, 200);
             params.setMargins(5, 0, 5, 0);
             child.setLayoutParams(params);
@@ -100,6 +129,10 @@ public class OwnDiary extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.own_diary_page);
-        addWine();
+        try {
+            addWine();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

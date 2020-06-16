@@ -1,8 +1,9 @@
 package com.example.stirdiary;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.widget.ImageView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -66,6 +67,7 @@ public class DcFinal extends AppCompatActivity {
                 String title = text.getText().toString();
                 creatingDiary.setDiary_title(title);
                 creatingDiary.showInfo();
+
                 DBDiaryDao dbDiaryDao=new DBDiaryDao(DcFinal.this);
                 dbDiaryDao.insert(creatingDiary);
                 Intent it_for_choose_stirway = new Intent(DcFinal.this, MainActivity.class);
