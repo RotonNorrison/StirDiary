@@ -1,6 +1,7 @@
 package com.example.stirdiary;
 
 import android.content.Intent;
+import android.content.SearchRecentSuggestionsProvider;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -8,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.stirdiary.SentimentClassify;
+
+import java.io.IOException;
 
 public class DcText extends AppCompatActivity {
     @Override
@@ -27,14 +31,20 @@ public class DcText extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //获取文本内容
-                EditText editText = (EditText) findViewById(R.id.creatingAddText_editText);
-                String text = editText.getText().toString();
-                creatingDiary.setText(text);
+                EditText editText =(EditText)findViewById(R.id.creatingAddText_editText);
+                String text=editText.getText().toString();
                 try {
-                    mDFH.generateDiarySVG("temp", creatingDiary);
-                } catch (Exception e) {
+                    String sentiment = SentimentClassify.sentimentClassify(text);
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+                creatingDiary.setText(text);
+//                try {
+//                    mDFH.generateDiarySVG("temp", creatingDiary);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
 
                 //跳转下个界面
                 Intent it_for_choose_stirway = new Intent(DcText.this, DcChooseWay.class);

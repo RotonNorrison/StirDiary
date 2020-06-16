@@ -127,7 +127,6 @@
                         android:button="@null"
                         android:drawableBottom="@drawable/ic_whisky_selector"
                         android:tag="whisky"/>
-
             </RadioGroup>
 
         </LinearLayout>
