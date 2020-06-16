@@ -8,8 +8,12 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.ToggleButton;
 import android.widget.CompoundButton;
-
+import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
+import android.database.sqlite.SQLiteDatabase;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.stirdiary.DBDiaryDao;
+import com.example.stirdiary.UUIDGenerator;
 
 public class DcFinal extends AppCompatActivity {
     @Override
@@ -24,7 +28,10 @@ public class DcFinal extends AppCompatActivity {
         sharebtn.setOnCheckedChangeListener(new ToggleButton.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    creatingDiary.setShare_state(isChecked);
+                if(isChecked)
+                    creatingDiary.setShare_state(1);
+                else
+                    creatingDiary.setShare_state(0);
             }
         });
 
@@ -39,6 +46,9 @@ public class DcFinal extends AppCompatActivity {
                 String title = text.getText().toString();
                 creatingDiary.setDiary_title(title);
                 creatingDiary.showInfo();
+
+                DBDiaryDao dbDiaryDao=new DBDiaryDao(DcFinal.this);
+                dbDiaryDao.insert(creatingDiary);
                 Intent it_for_choose_stirway = new Intent(DcFinal.this, MainActivity.class);
                 startActivity(it_for_choose_stirway);
                 finish();

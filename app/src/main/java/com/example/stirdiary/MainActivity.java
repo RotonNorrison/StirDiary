@@ -8,11 +8,15 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import pl.com.salsoft.sqlitestudioremote.SQLiteStudioService;
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SQLiteStudioService.instance().start(this);
         setContentView(R.layout.activity_main);
         //创建日记文件保存类
         DiaryFileHelper mFileHelper = new DiaryFileHelper(this);
