@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         btn_for_creation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it_for_creation = new Intent(MainActivity.this, DiaryCreate.class);
+                Intent it_for_creation = new Intent(MainActivity.this, DcBottle.class);
                 startActivity(it_for_creation);
             }
 

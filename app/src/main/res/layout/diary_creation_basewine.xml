@@ -1,142 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/chooseBase_background"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E6B944">
+
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:id="@+id/chooseBase_background"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="#E6B944"
+>
 
     <ImageView
-        android:id="@+id/chooseBase_img_background1"
-        android:layout_width="461dp"
-        android:layout_height="517dp"
-        android:layout_marginTop="124dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chooseBase_img_text1"
-        app:srcCompat="@drawable/ic_blank" />
+            android:id="@+id/chooseBase_img_background1"
+            android:layout_width="393dp"
+            android:layout_height="600dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chooseBase_img_text1"
+            app:srcCompat="@drawable/ic_blank" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:scaleType="fitXY"/>
 
     <ImageView
-        android:id="@+id/chooseBase_img_text2"
-        android:layout_width="73dp"
-        android:layout_height="18dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="97dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseBase_img_text1"
-        app:srcCompat="@drawable/ic_choosebase_basetext" />
+            android:id="@+id/chooseBase_img_text1"
+            android:layout_width="212dp"
+            android:layout_height="116dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
 
-    <ImageView
-        android:id="@+id/chooseBase_img_text1"
-        android:layout_width="212dp"
-        android:layout_height="116dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="64dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_choosaebase_choosetext" />
+            app:srcCompat="@drawable/ic_choosaebase_choosetext" android:scaleType="fitCenter"/>
+
 
     <HorizontalScrollView
-        android:id="@+id/Scroll_wine"
-        android:layout_width="380dp"
-        android:layout_height="127dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chooseBase_img_text2">
+            android:id="@+id/Scroll_wine"
+            android:layout_width="380dp"
+            android:layout_height="127dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="80dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chooseBase_img_text1"
+            tools:layout_editor_absoluteY="268dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <RadioGroup
-                android:id="@+id/chooseBase_RadioGroup"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/radioButton_brandy"
+            <RadioGroup
+                    android:id="@+id/chooseBase_RadioGroup"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="40dp"
                     android:layout_weight="1"
-                    android:background="@drawable/ic_brandy"
-                    android:button="@null"
-                    android:tag="brandy" />
+                    android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton_gin"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="40dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/ic_gin"
-                    android:button="@null"
-                    android:tag="gin" />
+                        android:id="@+id/radioButton_brandy"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_brandy_selector"
+                        android:button="@null"
+                        android:tag="brandy"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton_rum"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="40dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/ic_rum"
-                    android:button="@null"
-                    android:tag="rum" />
+                        android:id="@+id/radioButton_gin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_gin_selector"
+                        android:button="@null"
+                        android:tag="gin"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton_tequila"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="40dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/ic_tequila"
-                    android:button="@null"
-                    android:tag="tequila" />
+                        android:id="@+id/radioButton_rum"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_rum_selector"
+                        android:button="@null"
+                        android:tag="rum"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton_vodka"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="40dp"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_vodka"
-                    android:tag="vodka" />
+                        android:id="@+id/radioButton_tequila"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_tequila_selector"
+                        android:button="@null"
+                        android:tag="tequila"/>
 
                 <RadioButton
-                    android:id="@+id/radioButton_whisky"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="40dp"
-                    android:layout_weight="1"
-                    android:button="@null"
-                    android:drawableBottom="@drawable/ic_whisky"
-                    android:tag="whisky" />
+                        android:id="@+id/radioButton_vodka"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="@drawable/ic_vodka_selector"
+                        android:tag="vodka"/>
 
+                <RadioButton
+                        android:id="@+id/radioButton_whisky"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="40dp"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:drawableBottom="@drawable/ic_whisky_selector"
+                        android:tag="whisky"/>
             </RadioGroup>
 
         </LinearLayout>
     </HorizontalScrollView>
 
     <Button
-        android:id="@+id/chooseBase_nextbtn"
-        android:layout_width="61dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginLeft="59dp"
-        android:layout_marginTop="96dp"
-        android:background="@null"
-        android:drawableBottom="@drawable/ic_next"
-        app:layout_constraintStart_toEndOf="@+id/chooseBase_img_text1"
-        app:layout_constraintTop_toTopOf="parent" />
-
+            android:id="@+id/chooseBase_nextbtn"
+            android:layout_width="61dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:background="@null"
+            android:drawableBottom="@drawable/ic_next"
+            app:layout_constraintStart_toEndOf="@+id/chooseBase_img_text1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/chooseBase_img_background1"
+            app:layout_constraintVertical_bias="0.68" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.29"/>
     <SeekBar
         android:id="@+id/chooseBase_wine_amount_seekbar"
         android:layout_width="196dp"
@@ -159,15 +154,12 @@
         app:layout_constraintTop_toBottomOf="@+id/chooseBase_nextbtn" />
 
     <Button
-        android:id="@+id/chooseBase_wine_addbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="28dp"
-        android:background="@null"
-        android:drawableBottom="@drawable/ic_add"
-        app:layout_constraintStart_toEndOf="@id/chooseBase_img_text2"
-        app:layout_constraintTop_toBottomOf="@+id/chooseBase_wine_amount_seekbar" />
+            android:id="@+id/chooseBase_wine_addbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:drawableBottom="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

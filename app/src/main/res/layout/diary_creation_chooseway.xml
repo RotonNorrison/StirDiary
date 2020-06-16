@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C69C6D"
+>
+    <ImageView android:layout_width="265dp" android:layout_height="122dp"
+               app:srcCompat="@drawable/ic_choosewaytext" app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="20dp"
+               android:scaleType="centerInside"
+               android:layout_marginTop="48dp" android:layout_marginStart="24dp" android:id="@+id/chooseway_base"/>
+    <ImageView
+            android:id="@+id/choosewayimg_background1"
+            android:layout_width="393dp"
+            android:layout_height="600dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chooseway_base"
+            app:srcCompat="@drawable/ic_newboard" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:scaleType="fitXY"/>
+    <ImageView android:layout_width="310dp" android:layout_height="110dp"
+               app:srcCompat="@drawable/ic_layertext"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintTop_toTopOf="@+id/choosewayimg_background1"
+               app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.13"
+               app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageView"/>
+    <ImageView android:layout_width="310dp" android:layout_height="110dp"
+               app:srcCompat="@drawable/ic_shakertext"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintTop_toTopOf="@+id/choosewayimg_background1"
+               app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.48000002"
+               app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageView3"/>
+    <ImageView android:layout_width="310dp" android:layout_height="110dp"
+               app:srcCompat="@drawable/ic_stirtext"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintTop_toTopOf="@+id/choosewayimg_background1"
+               app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.82"
+               app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageView2"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="调酒方式"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView android:layout_width="150dp" android:layout_height="110dp"
+               android:src="@drawable/nlayer"
+               android:id="@+id/chooseStirWay_radiobtn_duihe"
+               app:layout_constraintStart_toStartOf="@+id/imageView" app:layout_constraintTop_toTopOf="@+id/imageView"/>
+    <ImageView android:layout_width="150dp" android:layout_height="110dp"
+               android:src="@drawable/nshaker"
+               android:id="@+id/chooseStirWay_radiobtn_yaohe"
+               app:layout_constraintTop_toTopOf="@+id/imageView3"
+               app:layout_constraintStart_toStartOf="@+id/imageView3"/>
 
-    <Button
-        android:id="@+id/chooseStirway_nextbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginLeft="168dp"
-        android:layout_marginTop="504dp"
-        android:text="Next"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView android:layout_width="150dp" android:layout_height="110dp"
+               android:src="@drawable/nstir"
+               android:id="@+id/chooseStirWay_radiobtn_tiaohe" app:layout_constraintTop_toTopOf="@+id/imageView2"
+               app:layout_constraintStart_toStartOf="@+id/imageView2"/>
 
-    <RadioGroup
-        android:id="@+id/chooseStirWay_radioGroup"
-        android:layout_width="214dp"
-        android:layout_height="95dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginLeft="107dp"
-        android:layout_marginTop="139dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RadioButton
-            android:id="@+id/chooseStirWay_radiobtn_tiaohe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="调和" />
-
-        <RadioButton
-            android:id="@+id/chooseStirWay_radiobtn_duihe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="兑和" />
-
-        <RadioButton
-            android:id="@+id/chooseStirWay_radiobtn_yaohe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="摇和" />
-    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

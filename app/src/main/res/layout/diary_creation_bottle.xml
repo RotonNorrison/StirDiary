@@ -1,70 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C69C6D">
+    <ImageView
+            android:id="@+id/chooseglass_base"
+            android:layout_width="212dp"
+            android:layout_height="116dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="64dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_chooseglass"/>
+    <ImageView
+            android:id="@+id/chooseBase_img_background1"
+            android:layout_width="393dp"
+            android:layout_height="600dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chooseglass_base"
+            app:srcCompat="@drawable/ic_blank" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:scaleType="fitXY"/>
     <ImageButton
-        android:id="@+id/chooseBottle_Bottle3_btn"
-        android:layout_width="134dp"
-        android:layout_height="217dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseBottle_Bottle1_btn"
-        app:srcCompat="@drawable/ic_glass3_selector" />
-
+            android:id="@+id/chooseBottle_Bottle4_btn"
+            android:layout_width="31dp"
+            android:layout_height="82dp"
+            android:background="@drawable/ic_glass4_selector"
+            app:layout_constraintStart_toEndOf="@+id/chooseBottle_Bottle3_btn" android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="306dp"/>
     <ImageButton
-        android:id="@+id/chooseBottle_Bottle4_btn"
-        android:layout_width="127dp"
-        android:layout_height="239dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintStart_toEndOf="@+id/chooseBottle_Bottle3_btn"
-        app:layout_constraintTop_toBottomOf="@+id/chooseBottle_Bottle2_btn"
-        app:srcCompat="@drawable/ic_glass4_selector" />
-
+            android:id="@+id/chooseBottle_Bottle2_btn"
+            android:layout_width="57dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="340dp"
+            app:layout_constraintStart_toEndOf="@+id/chooseBottle_Bottle1_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/ic_glass2_selector"/>
     <ImageButton
-        android:id="@+id/chooseBottle_Bottle2_btn"
-        android:layout_width="162dp"
-        android:layout_height="198dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="88dp"
-        app:layout_constraintStart_toEndOf="@+id/chooseBottle_Bottle1_btn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_glass2_selector" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="选杯子"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/chooseBottle_Bottle3_btn"
+            android:layout_width="42dp"
+            android:layout_height="76dp"
+            android:background="@drawable/ic_glass3_selector"
+            app:layout_constraintStart_toEndOf="@+id/chooseBottle_Bottle2_btn" android:layout_marginLeft="28dp"
+            android:layout_marginStart="28dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="314dp"/>
+    <ImageButton
+            android:id="@+id/chooseBottle_Bottle1_btn"
+            android:layout_width="43dp"
+            android:layout_height="89dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginLeft="56dp"
+            android:layout_marginTop="302dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/ic_glass1_selector"/>
 
     <Button
-        android:id="@+id/chooseBottle_nextbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="588dp"
-        android:text="Next"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/chooseBottle_nextbtn"
+            android:layout_width="61dp"
+            android:layout_height="53dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:background="@null"
+            android:drawableBottom="@drawable/ic_next"
+            app:layout_constraintStart_toEndOf="@+id/chooseglass_base"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/chooseBase_img_background1"
+            app:layout_constraintVertical_bias="0.68" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.29"/>
 
-    <ImageButton
-        android:id="@+id/chooseBottle_Bottle1_btn"
-        android:layout_width="101dp"
-        android:layout_height="251dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="64dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_glass1_selector" />
+    <ImageView android:layout_width="308dp" android:layout_height="21dp"
+               android:background="@drawable/ic_shelf"
+               app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.493"
+               app:layout_constraintTop_toBottomOf="@+id/chooseBottle_Bottle3_btn"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

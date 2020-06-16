@@ -1,11 +1,10 @@
 package com.example.stirdiary;
 
 import android.content.Context;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.util.List;
-
-import com.google.gson.Gson;
 
 class DiaryList {
     private List<Diary> l;
