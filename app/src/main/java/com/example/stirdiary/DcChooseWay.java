@@ -4,11 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,7 +30,7 @@ public class DcChooseWay extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 creatingDiary.setStirWay(1);
-                Intent it_for_creating_stir = new Intent(DcChooseWay.this, DcStir.class);
+                Intent it_for_creating_stir = new Intent(DcChooseWay.this, Dcstir.class);
                 it_for_creating_stir.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_creating_stir);
                 finish();
@@ -43,7 +40,7 @@ public class DcChooseWay extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 creatingDiary.setStirWay(2);
-                Intent it_for_creating_stir = new Intent(DcChooseWay.this, DcStir.class);
+                Intent it_for_creating_stir = new Intent(DcChooseWay.this, DcShake.class);
                 it_for_creating_stir.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_creating_stir);
                 finish();
@@ -53,7 +50,7 @@ public class DcChooseWay extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 creatingDiary.setStirWay(3);
-                Intent it_for_creating_stir = new Intent(DcChooseWay.this, DcStir.class);
+                Intent it_for_creating_stir = new Intent(DcChooseWay.this, DcShake.class);
                 it_for_creating_stir.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_creating_stir);
                 finish();

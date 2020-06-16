@@ -3,7 +3,11 @@ package com.example.stirdiary;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,13 +19,93 @@ import android.widget.TextView;
 import android.util.Pair;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class DcBaseWine extends AppCompatActivity {
+    private ConstraintLayout mContainer;
+    private ScheduledExecutorService scheduledExecutor;
+    private List<Wine> wineList = new ArrayList<Wine>();
+    private final int[] curWine = {0};
+    private int curHeight = 0;
+    private boolean onAdding = false;
+    private int curId = 1000;
+    final ConstraintSet set = new ConstraintSet();
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            if (!onAdding) {
+                curId += 1;
+
+                SinWaveView swView = new SinWaveView(DcBaseWine.this);
+                swView.setId(curId);
+                swView.setHeight(curHeight);
+                swView.changeColor(wineList.get(curWine[0]).color);
+
+
+                mContainer.addView(swView, 1);
+                set.clone(mContainer);
+                set.connect(curId, ConstraintSet.LEFT, R.id.chooseBase_background, ConstraintSet.LEFT);
+                set.connect(curId, ConstraintSet.RIGHT, R.id.chooseBase_background, ConstraintSet.RIGHT);
+                set.connect(curId, ConstraintSet.END, R.id.chooseBase_background, ConstraintSet.END);
+                set.applyTo(mContainer);
+                onAdding = !onAdding;
+            }
+            SinWaveView trial = findViewById(curId);
+            trial.addHeight();
+            curHeight += 1;
+        }
+    };
+
+    private void updateAdd(int viewid) {
+        final int vid = viewid;
+        scheduledExecutor = Executors.newSingleThreadScheduledExecutor();
+        scheduledExecutor.scheduleWithFixedDelay(new Runnable() {
+            @Override
+            public void run() {
+                Message msg = new Message();
+                msg.what = vid;
+                handler.sendMessage(msg);
+            }
+        }, 0, 8, TimeUnit.MILLISECONDS);
+
+    }
+
+    private void stopAdd() {
+        if (scheduledExecutor != null) {
+            scheduledExecutor.shutdown();
+            scheduledExecutor = null;
+        }
+    }
+
+    private void wine_init() {
+        Wine brandy_wine = new Wine("Brandy", 0xff82272d, 1000);
+        Wine gin_wine = new Wine("Gin", 0xfff2f2f2, 1001);
+        Wine rum_wine = new Wine("Rum", 0xfff18258, 1002);
+        Wine tequila_wine = new Wine("Tequila", 0xfffffb85, 1003);
+        Wine vodka_wine = new Wine("Vodka", 0xfff2f2f2, 1004);
+        Wine whisky_wine = new Wine("Whisky", 0xfff17324, 1005);
+        wineList.add(brandy_wine);
+        wineList.add(gin_wine);
+        wineList.add(rum_wine);
+        wineList.add(tequila_wine);
+        wineList.add(vodka_wine);
+        wineList.add(whisky_wine);
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.diary_creation_basewine);
+        wine_init();
+
 
         final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
         creatingDiary.showInfo();
@@ -38,7 +122,6 @@ public class DcBaseWine extends AppCompatActivity {
         final Double[] volume = new Double[1];
         //根据选定的酒改变背景颜色
         final ConstraintLayout background0 = findViewById(R.id.chooseBase_background);
-        final ImageView background1 = findViewById(R.id.chooseBase_img_background1);
         radioGroupWine.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -46,64 +129,56 @@ public class DcBaseWine extends AppCompatActivity {
                 switch (id) {
                     case R.id.radioButton_brandy:
                         background0.setBackgroundColor(Color.parseColor("#c7b299"));
-                        background1.setBackgroundColor(Color.parseColor("#82272d"));
+                        curWine[0] = 0;
+                        onAdding = false;
                         break;
                     case R.id.radioButton_gin:
                         background0.setBackgroundColor(Color.parseColor("#c92700"));
-                        background1.setBackgroundColor(Color.parseColor("#f2f2f2"));
+                        curWine[0] = 1;
+                        onAdding = false;
                         break;
                     case R.id.radioButton_rum:
                         background0.setBackgroundColor(Color.parseColor("#fbb097"));
-                        background1.setBackgroundColor(Color.parseColor("#f18258"));
+                        curWine[0] = 2;
+                        onAdding = false;
                         break;
                     case R.id.radioButton_tequila:
                         background0.setBackgroundColor(Color.parseColor("#b5e7ad"));
-                        background1.setBackgroundColor(Color.parseColor("#fffb85"));
+                        curWine[0] = 3;
+                        onAdding = false;
                         break;
                     case R.id.radioButton_vodka:
                         background0.setBackgroundColor(Color.parseColor("#29abe2"));
-                        background1.setBackgroundColor(Color.parseColor("#f2f2f2"));
+                        curWine[0] = 4;
+                        onAdding = false;
                         break;
                     case R.id.radioButton_whisky:
                         background0.setBackgroundColor(Color.parseColor("#730028"));
-                        background1.setBackgroundColor(Color.parseColor("#f17324"));
+                        curWine[0] = 5;
+                        onAdding = false;
                         break;
                 }
             }
         });
         //酒添加
-        final SeekBar wineSeekBar = findViewById(R.id.chooseBase_wine_amount_seekbar);
-        final TextView wineAmountText = findViewById(R.id.chooseBase_wine_amount_text);
+
+        mContainer = findViewById(R.id.chooseBase_background);
+
+
         final Button addWineButton = findViewById(R.id.chooseBase_wine_addbtn);
-        wineSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        addWineButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                wineAmountText.setText(Integer.toString(progress) + "ml");
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
-        });
-
-        addWineButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int count = radioGroupWine.getChildCount();
-                for (int i = 0; i < count; i++) {
-                    RadioButton rb = (RadioButton) radioGroupWine.getChildAt(i);
-                    if (rb.isChecked()) {
-                        System.out.println(i);
-                        winename[0] = rb.getTag().toString();
-                        break;
-                    }
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    updateAdd(curId);    //手指按下时触发不停的发送消息
+                } else if (event.getAction() == MotionEvent.ACTION_UP) {
+                    stopAdd();    //手指抬起时停止发送
                 }
+                return true;
             }
         });
+
+
         Button btn_for_continue_to_add_text;
         btn_for_continue_to_add_text = findViewById(R.id.chooseBase_nextbtn);
         btn_for_continue_to_add_text.setOnClickListener(new View.OnClickListener() {

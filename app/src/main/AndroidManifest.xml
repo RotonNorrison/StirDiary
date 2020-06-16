@@ -25,10 +25,11 @@
         <activity android:name=".UserInfo"></activity>
         <activity android:name=".DcChooseWay"></activity>
         <activity android:name=".DcBottle"></activity>
-        <activity android:name=".DcStir"></activity>
+        <activity android:name=".DcShake"></activity>
         <activity android:name=".DcBaseWine"></activity>
         <activity android:name=".DcFinal"></activity>
         <activity android:name=".DcText"></activity>
+        <activity android:name=".Dcstir"></activity>
     </application>
 
 </manifest>
