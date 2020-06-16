@@ -78,11 +78,11 @@ public class DcBottle extends AppCompatActivity {
                 Intent it_for_choose_base = new Intent(DcBottle.this, DcBaseWine.class);
                 it_for_choose_base.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_choose_base);
-                try {
-                    mDFH.generateDiarySVG("temp", creatingDiary);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    mDFH.generateDiarySVG("temp", creatingDiary);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
                 finish();
             }
         });

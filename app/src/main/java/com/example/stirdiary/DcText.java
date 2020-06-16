@@ -30,11 +30,11 @@ public class DcText extends AppCompatActivity {
                 EditText editText = (EditText) findViewById(R.id.creatingAddText_editText);
                 String text = editText.getText().toString();
                 creatingDiary.setText(text);
-                try {
-                    mDFH.generateDiarySVG("temp", creatingDiary);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+//                try {
+//                    mDFH.generateDiarySVG("temp", creatingDiary);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
 
                 //跳转下个界面
                 Intent it_for_choose_stirway = new Intent(DcText.this, DcChooseWay.class);

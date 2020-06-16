@@ -1,11 +1,12 @@
 package com.example.stirdiary;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.*;
-
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ToggleButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.IOException;
@@ -56,7 +57,7 @@ public class DcFinal extends AppCompatActivity {
                 finalDlist.add(creatingDiary);
                 try {
                     mDFH.saveDiaryListToFile("diary_list_storage", finalDlist);
-                    mDFH.generateDiarySVG(creatingDiary.getDiary_title(), creatingDiary);
+//                    DiaryThumbnailHelper.generateDiaryPNG(creatingDiary.getDiary_title()+".png", creatingDiary);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

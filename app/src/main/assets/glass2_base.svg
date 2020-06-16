@@ -1,0 +1,20 @@
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="139.9px" height="146.2px" viewBox="0 0 139.9 146.2"
+	 style="overflow:scroll;enable-background:new 0 0 139.9 146.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#4D245F;stroke-width:3;stroke-miterlimit:10;}
+	.st1{fill:#4D245F;stroke:#4D245F;stroke-width:3;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#4D245F;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<defs>
+<mask id="water">
+<rect fill="#000000" width="139.9" height="146.2"/>
+<polygon fill="#FFFFFF" stroke="#000000" stroke-width="3" stroke-miterlimit="10" clastroke-linecap="round" points="70,67.6 3.6,1.5 136.3,1.5 "/>
+</mask>
+</defs>
+<line class="st0" x1="70" y1="65.3" x2="70" y2="136.9"/>
+<path class="st1" d="M70,137.9l-27.1,6.6c-0.1,0-0.1,0.1,0,0.1h54.3c0.1,0,0.1-0.1,0-0.1L70,137.9C70,137.9,70,137.9,70,137.9z"/>
+<polygon class="st2" points="70,67.6 3.6,1.5 136.3,1.5 "/>
+</svg>

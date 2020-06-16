@@ -2,17 +2,8 @@ package com.example.stirdiary;
 
 import android.content.Context;
 import com.google.gson.Gson;
-import org.w3c.dom.Document;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringWriter;
 import java.util.List;
 
 class DiaryList {
@@ -60,45 +51,5 @@ public class DiaryFileHelper {
         String diaryListJsonText = fh.read(fileName);
         DiaryList diaryList = gson.fromJson(diaryListJsonText, DiaryList.class);
         return diaryList.getList();
-    }
-
-    public void generateDiarySVG(String fileName, Diary diary) throws Exception {
-        String bottleFileName = "/assets/glasses/" + "glass" + diary.getBottle_kind() + ".svg";
-        InputStream is = getClass().getResourceAsStream(bottleFileName);
-
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        dbf.setNamespaceAware(true);
-        DocumentBuilder db = dbf.newDocumentBuilder();
-
-        Document document = db.parse(is);
-        String result = null;
-
-        if (document != null) {
-            StringWriter strWtr = new StringWriter();
-            StreamResult strResult = new StreamResult(strWtr);
-            TransformerFactory tfac = TransformerFactory.newInstance();
-            try {
-                javax.xml.transform.Transformer t = tfac.newTransformer();
-                t.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-                t.setOutputProperty(OutputKeys.INDENT, "yes");
-                t.setOutputProperty(OutputKeys.METHOD, "xml"); // xml, html,
-                // text
-                t.setOutputProperty(
-                        "{http://xml.apache.org/xslt}indent-amount", "4");
-                t.transform(new DOMSource(document.getDocumentElement()),
-                        strResult);
-            } catch (Exception e) {
-                System.err.println("XML.toString(Document): " + e);
-            }
-            result = strResult.getWriter().toString();
-            try {
-                strWtr.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        FileHelper fh = new FileHelper(mContext);
-        fh.save(fileName, result);
     }
 }
