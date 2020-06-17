@@ -13,7 +13,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
-public class OwnDiary extends AppCompatActivity {
+public class OwnDiary_shelf extends AppCompatActivity {
     private LinearLayout container;
 
     public void addWine() throws Exception {
@@ -55,7 +55,7 @@ public class OwnDiary extends AppCompatActivity {
             child.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent it = new Intent(OwnDiary.this, DiaryReading.class);
+                    Intent it = new Intent(OwnDiary_shelf.this, DiaryReading.class);
                     it.putExtra("file", Diarytemp);
                     startActivity(it);
                 }
@@ -85,7 +85,7 @@ public class OwnDiary extends AppCompatActivity {
             child.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent it = new Intent(OwnDiary.this, DiaryReading.class);
+                    Intent it = new Intent(OwnDiary_shelf.this, DiaryReading.class);
                     it.putExtra("file", Diarytemp);
                     startActivity(it);
                 }
@@ -115,7 +115,7 @@ public class OwnDiary extends AppCompatActivity {
             child.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent it = new Intent(OwnDiary.this, DiaryReading.class);
+                    Intent it = new Intent(OwnDiary_shelf.this, DiaryReading.class);
                     it.putExtra("file", Diarytemp);
                     startActivity(it);
                 }
@@ -128,7 +128,7 @@ public class OwnDiary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.own_diary_page);
+        setContentView(R.layout.own_diary_shelf);
         try {
             addWine();
         } catch (Exception e) {

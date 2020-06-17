@@ -27,14 +27,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class DcBaseWine extends AppCompatActivity {
-    Diary creatingDiary;
+public class DcJuice extends AppCompatActivity {
     private ConstraintLayout mContainer;
     private ScheduledExecutorService scheduledExecutor;
     private List<Wine> wineList = new ArrayList<Wine>();
     private final int[] curWine = {0};
     private int curHeight = 0;
-    private int formerHeight = 0;
     private boolean onAdding = false;
     private int curId = 1000;
     final ConstraintSet set = new ConstraintSet();
@@ -47,7 +45,7 @@ public class DcBaseWine extends AppCompatActivity {
             if (!onAdding) {
                 curId += 1;
 
-                SinWaveView swView = new SinWaveView(DcBaseWine.this);
+                SinWaveView swView = new SinWaveView(DcJuice.this);
                 swView.setId(curId);
                 swView.setHeight(curHeight);
                 swView.changeColor(wineList.get(curWine[0]).color);
@@ -55,24 +53,20 @@ public class DcBaseWine extends AppCompatActivity {
 
                 mContainer.addView(swView, 1);
                 set.clone(mContainer);
-                set.connect(curId, ConstraintSet.LEFT, R.id.chooseBase_background, ConstraintSet.LEFT);
-                set.connect(curId, ConstraintSet.RIGHT, R.id.chooseBase_background, ConstraintSet.RIGHT);
-                set.connect(curId, ConstraintSet.END, R.id.chooseBase_background, ConstraintSet.END);
+                set.connect(curId, ConstraintSet.LEFT, R.id.chooseJuice_background, ConstraintSet.LEFT);
+                set.connect(curId, ConstraintSet.RIGHT, R.id.chooseJuice_background, ConstraintSet.RIGHT);
+                set.connect(curId, ConstraintSet.END, R.id.chooseJuice_background, ConstraintSet.END);
                 set.applyTo(mContainer);
                 onAdding = !onAdding;
-                if (curHeight != 0) {
-                    creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
-                    formerHeight = curHeight;
-                }
             }
             SinWaveView trial = findViewById(curId);
-
 
             trial.addHeight();
             curHeight += 1;
 
         }
     };
+
     private void updateAdd(int viewid) {
         final int vid = viewid;
         scheduledExecutor = Executors.newSingleThreadScheduledExecutor();
@@ -95,12 +89,12 @@ public class DcBaseWine extends AppCompatActivity {
     }
 
     private void wine_init() {
-        Wine brandy_wine = new Wine("Brandy", 0xff82272d, 1000);
-        Wine gin_wine = new Wine("Gin", 0xfff2f2f2, 1001);
-        Wine rum_wine = new Wine("Rum", 0xfff18258, 1002);
-        Wine tequila_wine = new Wine("Tequila", 0xfffffb85, 1003);
-        Wine vodka_wine = new Wine("Vodka", 0xfff2f2f2, 1004);
-        Wine whisky_wine = new Wine("Whisky", 0xfff17324, 1005);
+        Wine brandy_wine = new Wine("Grenadine: ", 0xffED515C, 1000);
+        Wine gin_wine = new Wine("Orange: ", 0xffFBB571, 1001);
+        Wine rum_wine = new Wine("Cherry: ", 0xffFF92FF, 1002);
+        Wine tequila_wine = new Wine("Lime: ", 0xff6AFFAB, 1003);
+        Wine vodka_wine = new Wine("TripleSec: ", 0xff00FFFF, 1004);
+        Wine whisky_wine = new Wine("Blackberry: ", 0xffC11EF1, 1005);
         wineList.add(brandy_wine);
         wineList.add(gin_wine);
         wineList.add(rum_wine);
@@ -114,11 +108,11 @@ public class DcBaseWine extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.diary_creation_basewine);
+        setContentView(R.layout.diary_creation_juice);
         wine_init();
 
 
-        creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
+        final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
         creatingDiary.showInfo();
 
         final RadioGroup radioGroupWine = findViewById(R.id.chooseBase_RadioGroup);
@@ -132,7 +126,7 @@ public class DcBaseWine extends AppCompatActivity {
         final String[] winename = new String[1];
         final Double[] volume = new Double[1];
         //根据选定的酒改变背景颜色
-        final ConstraintLayout background0 = findViewById(R.id.chooseBase_background);
+        final ConstraintLayout background0 = findViewById(R.id.chooseJuice_background);
         radioGroupWine.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -173,7 +167,7 @@ public class DcBaseWine extends AppCompatActivity {
         });
         //酒添加
 
-        mContainer = findViewById(R.id.chooseBase_background);
+        mContainer = findViewById(R.id.chooseJuice_background);
 
 
         final Button addWineButton = findViewById(R.id.chooseBase_wine_addbtn);
@@ -195,7 +189,7 @@ public class DcBaseWine extends AppCompatActivity {
         btn_for_continue_to_add_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it_for_add_text = new Intent(DcBaseWine.this, DcJuice.class);
+                Intent it_for_add_text = new Intent(DcJuice.this, DcText.class);
                 it_for_add_text.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_add_text);
                 finish();

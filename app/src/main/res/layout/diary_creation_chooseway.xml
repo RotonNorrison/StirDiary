@@ -14,19 +14,21 @@
                android:layout_marginTop="48dp" android:layout_marginStart="24dp" android:id="@+id/chooseway_base"/>
     <ImageView
             android:id="@+id/choosewayimg_background1"
-            android:layout_width="393dp"
+            android:layout_width="0dp"
             android:layout_height="600dp"
             android:layout_marginTop="60dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chooseway_base"
             app:srcCompat="@drawable/ic_newboard" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:scaleType="fitXY"/>
+            app:layout_constraintEnd_toEndOf="parent" android:scaleType="fitXY"
+            app:layout_constraintVertical_bias="1.0"/>
     <ImageView android:layout_width="310dp" android:layout_height="110dp"
                app:srcCompat="@drawable/ic_layertext"
                app:layout_constraintBottom_toBottomOf="parent"
                app:layout_constraintTop_toTopOf="@+id/choosewayimg_background1"
-               app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.13"
-               app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageView"/>
+               app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.129"
+               app:layout_constraintEnd_toEndOf="parent" android:id="@+id/imageView"
+               app:layout_constraintHorizontal_bias="0.493"/>
     <ImageView android:layout_width="310dp" android:layout_height="110dp"
                app:srcCompat="@drawable/ic_shakertext"
                app:layout_constraintBottom_toBottomOf="parent"

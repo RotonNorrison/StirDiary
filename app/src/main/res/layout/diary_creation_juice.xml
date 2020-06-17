@@ -3,7 +3,7 @@
 
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
-                                                   android:id="@+id/chooseBase_background"
+                                                   android:id="@+id/chooseJuice_background"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
                                                    android:background="#E6B944"
@@ -74,7 +74,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_brandy"
+                        android:background="@drawable/ic_grenadine"
                         android:button="@null"
                         android:tag="brandy"/>
 
@@ -84,7 +84,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_gin"
+                        android:background="@drawable/ic_orange"
                         android:button="@null"
                         android:tag="gin"/>
 
@@ -94,7 +94,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_rum"
+                        android:background="@drawable/ic_cherry"
                         android:button="@null"
                         android:tag="rum"/>
 
@@ -104,7 +104,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_tequila"
+                        android:background="@drawable/ic_lime"
                         android:button="@null"
                         android:tag="tequila"/>
 
@@ -115,7 +115,7 @@
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
                         android:button="@null"
-                        android:drawableBottom="@drawable/ic_vodka"
+                        android:drawableBottom="@drawable/ic_triple_sec"
                         android:tag="vodka"/>
 
                 <RadioButton
@@ -125,7 +125,7 @@
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
                         android:button="@null"
-                        android:drawableBottom="@drawable/ic_whisky"
+                        android:drawableBottom="@drawable/ic_blackberry"
                         android:tag="whisky"/>
             </RadioGroup>
 
