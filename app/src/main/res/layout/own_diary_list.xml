@@ -20,6 +20,13 @@
                android:layout_marginRight="24dp" android:layout_marginEnd="24dp"
                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="24dp"
                android:id="@+id/switch_button"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/month"
+              android:textSize="21sp"
+              android:text="2020-06" app:layout_constraintBottom_toTopOf="@+id/switcher"
+              app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintVertical_bias="1.0" android:layout_marginLeft="16dp"
+              android:layout_marginStart="16dp"/>
     <ViewSwitcher android:layout_width="0dp" android:layout_height="wrap_content"
                   android:id="@+id/switcher" app:layout_constraintEnd_toEndOf="parent"
                   app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"

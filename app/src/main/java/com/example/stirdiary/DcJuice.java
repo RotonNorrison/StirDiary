@@ -60,11 +60,7 @@ public class DcJuice extends AppCompatActivity {
                 set.connect(curId, ConstraintSet.END, R.id.chooseJuice_background, ConstraintSet.END);
                 set.applyTo(mContainer);
                 onAdding = !onAdding;
-                if (curHeight != 0) {
-                    creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
-                    formerHeight = curHeight;
-                    creatingDiary.showInfo();
-                }
+
             }
             SinWaveView trial = findViewById(curId);
 
@@ -139,31 +135,67 @@ public class DcJuice extends AppCompatActivity {
                 switch (id) {
                     case R.id.radioButton_brandy:
                         background0.setBackgroundColor(Color.parseColor("#c7b299"));
-                        curWine[0] = 0;
+
                         onAdding = false;
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
+                        curWine[0] = 0;
                         break;
                     case R.id.radioButton_gin:
                         background0.setBackgroundColor(Color.parseColor("#c92700"));
-                        curWine[0] = 1;
+
                         onAdding = false;
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
+                        curWine[0] = 1;
                         break;
                     case R.id.radioButton_rum:
                         background0.setBackgroundColor(Color.parseColor("#fbb097"));
+
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
                         curWine[0] = 2;
                         onAdding = false;
                         break;
                     case R.id.radioButton_tequila:
                         background0.setBackgroundColor(Color.parseColor("#b5e7ad"));
-                        curWine[0] = 3;
+
                         onAdding = false;
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
+                        curWine[0] = 3;
                         break;
                     case R.id.radioButton_vodka:
                         background0.setBackgroundColor(Color.parseColor("#29abe2"));
-                        curWine[0] = 4;
+
                         onAdding = false;
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
+                        curWine[0] = 4;
                         break;
                     case R.id.radioButton_whisky:
                         background0.setBackgroundColor(Color.parseColor("#730028"));
+
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
                         curWine[0] = 5;
                         onAdding = false;
                         break;
@@ -195,7 +227,7 @@ public class DcJuice extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (onAdding & curHeight != 0) {
-                    creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
+                    creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));
                     formerHeight = curHeight;
                     creatingDiary.showInfo();
                 }

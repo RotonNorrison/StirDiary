@@ -60,11 +60,7 @@ public class DcBaseWine extends AppCompatActivity {
                 set.connect(curId, ConstraintSet.END, R.id.chooseBase_background, ConstraintSet.END);
                 set.applyTo(mContainer);
                 onAdding = !onAdding;
-                if (curHeight != 0) {
-                    creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
-                    formerHeight = curHeight;
-                    creatingDiary.showInfo();
-                }
+
             }
             SinWaveView trial = findViewById(curId);
 
@@ -141,38 +137,74 @@ public class DcBaseWine extends AppCompatActivity {
                 switch (id) {
                     case R.id.radioButton_brandy:
                         background0.setBackgroundColor(Color.parseColor("#c7b299"));
-                        curWine[0] = 0;
+
                         onAdding = false;
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
+                        curWine[0] = 0;
                         introduction.setText("A spirit produced by distilling wine, \"water of life\"");
                         break;
                     case R.id.radioButton_gin:
                         background0.setBackgroundColor(Color.parseColor("#c92700"));
-                        curWine[0] = 1;
+
                         onAdding = false;
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
+                        curWine[0] = 1;
                         introduction.setText("Derives its predominant flavour from juniper berries.");
                         break;
                     case R.id.radioButton_rum:
                         background0.setBackgroundColor(Color.parseColor("#fbb097"));
-                        curWine[0] = 2;
+
                         onAdding = false;
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
+                        curWine[0] = 2;
                         introduction.setText("Made from sugarcane, tastes like \"sweetness\"");
                         break;
                     case R.id.radioButton_tequila:
                         background0.setBackgroundColor(Color.parseColor("#b5e7ad"));
-                        curWine[0] = 3;
+
                         onAdding = false;
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
+                        curWine[0] = 3;
                         introduction.setText("Made from the blue agave, with very little alcohol taste\n");
                         break;
                     case R.id.radioButton_vodka:
                         background0.setBackgroundColor(Color.parseColor("#29abe2"));
-                        curWine[0] = 4;
+
                         onAdding = false;
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
+                        curWine[0] = 4;
                         introduction.setText("Made from fermented cereal grains, spicy and briny");
                         break;
                     case R.id.radioButton_whisky:
                         background0.setBackgroundColor(Color.parseColor("#730028"));
-                        curWine[0] = 5;
+
                         onAdding = false;
+                        if (curHeight != 0) {
+                            creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
+                            formerHeight = curHeight;
+                            creatingDiary.showInfo();
+                        }
+                        curWine[0] = 5;
                         introduction.setText("Made from fermented grain mash, aged liquor");
                         break;
                 }

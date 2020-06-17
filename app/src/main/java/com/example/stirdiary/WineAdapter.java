@@ -55,7 +55,7 @@ public class WineAdapter extends RecyclerView.Adapter<WineAdapter.MyViewHolder> 
         }
         wineImg = new SVGImageView(mContext);
         wineImg.setSVG(svg);
-        myViewHolder.mLinearLO.addView(wineImg, -1);
+        myViewHolder.mLinearLO.addView(wineImg, 0);
     }
 
     @Override
