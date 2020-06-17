@@ -74,7 +74,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_brandy_selector"
+                        android:background="@drawable/ic_brandy"
                         android:button="@null"
                         android:tag="brandy"/>
 
@@ -84,7 +84,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_gin_selector"
+                        android:background="@drawable/ic_gin"
                         android:button="@null"
                         android:tag="gin"/>
 
@@ -94,7 +94,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_rum_selector"
+                        android:background="@drawable/ic_rum"
                         android:button="@null"
                         android:tag="rum"/>
 
@@ -104,7 +104,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_tequila_selector"
+                        android:background="@drawable/ic_tequila"
                         android:button="@null"
                         android:tag="tequila"/>
 
@@ -115,7 +115,7 @@
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
                         android:button="@null"
-                        android:drawableBottom="@drawable/ic_vodka_selector"
+                        android:drawableBottom="@drawable/ic_vodka"
                         android:tag="vodka"/>
 
                 <RadioButton
@@ -125,7 +125,7 @@
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
                         android:button="@null"
-                        android:drawableBottom="@drawable/ic_whisky_selector"
+                        android:drawableBottom="@drawable/ic_whisky"
                         android:tag="whisky"/>
             </RadioGroup>
 

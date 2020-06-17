@@ -40,7 +40,7 @@ public class DcChooseWay extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 creatingDiary.setStirWay(2);
-                Intent it_for_creating_stir = new Intent(DcChooseWay.this, DcShake.class);
+                Intent it_for_creating_stir = new Intent(DcChooseWay.this, DcFinal.class);
                 it_for_creating_stir.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_creating_stir);
                 finish();

@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".OwnDiary" android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".OwnDiary_shelf">
         </activity>
         <activity android:name=".DiaryReading"></activity>
         <activity android:name=".LoginPage"></activity>
@@ -31,6 +31,7 @@
         <activity android:name=".DcText"></activity>
         <activity android:name=".Dcstir"></activity>
         <activity android:name=".DcJuice"></activity>
+        <activity android:name=".OwnDiary_list"></activity>
     </application>
 
 </manifest>

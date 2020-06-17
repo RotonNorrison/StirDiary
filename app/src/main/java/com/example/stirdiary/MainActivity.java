@@ -2,9 +2,8 @@ package com.example.stirdiary;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.Button;
+import android.view.Window;
 import android.widget.ImageView;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -13,10 +12,12 @@ import pl.com.salsoft.sqlitestudioremote.SQLiteStudioService;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SQLiteStudioService.instance().start(this);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         //创建日记文件保存类
         DiaryFileHelper mFileHelper = new DiaryFileHelper(this);
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         btn_for_reading.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it_for_reading = new Intent(MainActivity.this, OwnDiary.class);
+                Intent it_for_reading = new Intent(MainActivity.this, OwnDiary_list.class);
                 startActivity(it_for_reading);
             }
         });

@@ -18,6 +18,7 @@ public class Diary implements Serializable {
     private int decoration;
     private int share_state;
     private int stir_way;
+    private String date;
 
 
     public Diary(){
@@ -104,5 +105,13 @@ public class Diary implements Serializable {
             }
         }
 
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

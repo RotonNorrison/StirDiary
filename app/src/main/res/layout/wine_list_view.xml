@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="wrap_content"
+              android:layout_height="80dp"
+              android:onClick="onItemClick"
+              android:background="@drawable/listblocks"
+>
+    <ImageView android:layout_width="40dp" android:layout_height="40dp"
+               android:background="@drawable/ic_glass1"
+               android:id="@+id/wine_img"
+               android:layout_marginLeft="30dp"
+               android:layout_marginTop="20dp"
+    />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/wine_title"
+              android:layout_marginLeft="30dp"
+              android:layout_marginTop="20dp"
+    />
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:id="@+id/wine_date"
+              android:layout_marginLeft="30dp"
+              android:layout_marginTop="20dp"
+    />
+</LinearLayout>

@@ -15,9 +15,14 @@ import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.caverock.androidsvg.SVG;
+import com.caverock.androidsvg.SVGImageView;
+import com.caverock.androidsvg.SVGParseException;
 import com.example.stirdiary.DBDiaryDao;
 import com.example.stirdiary.UUIDGenerator;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +35,12 @@ public class DcFinal extends AppCompatActivity {
         setContentView(R.layout.diary_creation_final);
 
         final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
+        DiaryThumbnailHelper mDTH = new DiaryThumbnailHelper(getApplicationContext());
+        try {
+            mDTH.generateDiarySVG(creatingDiary.getUid(), creatingDiary);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         /**  final DiaryFileHelper mDFH = new DiaryFileHelper(getApplicationContext());
 
          List<Diary> Dlist = null;
@@ -41,6 +52,20 @@ public class DcFinal extends AppCompatActivity {
          if (Dlist == null) {
          Dlist = new ArrayList<Diary>();
          }*/
+        FileInputStream input = null;
+        try {
+            input = getApplicationContext().openFileInput(creatingDiary.getUid());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        SVG svg = null;
+        try {
+            svg = SVG.getFromInputStream(input);
+        } catch (SVGParseException e) {
+            e.printStackTrace();
+        }
+        SVGImageView child = findViewById(R.id.res_pic);
+        child.setSVG(svg);
         //分享按钮事件绑定
         ToggleButton sharebtn;
         sharebtn = findViewById(R.id.creatingFinal_sharebtn);
@@ -48,7 +73,7 @@ public class DcFinal extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked)
+                if (isChecked)
                     creatingDiary.setShare_state(1);
                 else
                     creatingDiary.setShare_state(0);
