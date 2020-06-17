@@ -28,7 +28,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class DcBaseWine extends AppCompatActivity {
-    Diary creatingDiary;
+    private Diary creatingDiary;
     private ConstraintLayout mContainer;
     private ScheduledExecutorService scheduledExecutor;
     private List<Wine> wineList = new ArrayList<Wine>();
@@ -63,6 +63,7 @@ public class DcBaseWine extends AppCompatActivity {
                 if (curHeight != 0) {
                     creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
                     formerHeight = curHeight;
+                    creatingDiary.showInfo();
                 }
             }
             SinWaveView trial = findViewById(curId);
@@ -202,6 +203,12 @@ public class DcBaseWine extends AppCompatActivity {
         btn_for_continue_to_add_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (onAdding) {
+                    if (curHeight != 0) {
+                        creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));
+                        formerHeight = curHeight;
+                    }
+                }
                 Intent it_for_add_text = new Intent(DcBaseWine.this, DcJuice.class);
                 it_for_add_text.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_add_text);

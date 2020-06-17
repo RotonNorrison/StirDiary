@@ -13,7 +13,7 @@ public class Diary implements Serializable {
     private String diary_title;
     private int bottle_kind;
     //基酒种类及对应的量
-    private ArrayList<AddWine> winelist = new ArrayList<>();
+    private ArrayList<AddWine> winelist;
     private String text;
     private int decoration;
     private int share_state;

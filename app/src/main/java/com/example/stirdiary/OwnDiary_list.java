@@ -34,17 +34,18 @@ public class OwnDiary_list extends AppCompatActivity {
         it.putExtra("file", diaryList.get(childAdapterPosition));
         startActivity(it);
     }
-
-    private void getDiaryByDate(String sdate, String edate) {
-        diaryList = mdbdao.selectBetweenDate(sdate, edate);
-    }
+/**
+ * private void getDiaryByDate(String sdate, String edate) {
+ * diaryList = mdbdao.selectBetweenDate(sdate, edate);
+ * }
+ */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.own_diary_list);
-        getDiaryByDate("2020-01-01", "2020-06-17");
+        //getDiaryByDate("2020-01-01", "2020-06-17");
         //切换事件
         ImageView switchButton = findViewById(R.id.switch_button);
         mVS = findViewById(R.id.switcher);

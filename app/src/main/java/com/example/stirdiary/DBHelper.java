@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by Jne
  * Date: 2015/1/6.
  */
-public class DBHelper extends SQLiteOpenHelper{
+public class DBHelper extends SQLiteOpenHelper {
     private static final int DB_VERSION = 1;
     private static final String DB_NAME = "APP.db";
     public static final String TABLE_NAME = "diary";
@@ -33,15 +33,7 @@ public class DBHelper extends SQLiteOpenHelper{
                 + "tequila_vol INTEGER,"
                 + "vodka_vol INTEGER,"
                 + "whisky_vol INTEGER,"
-                + "grenadine_vol INTEGER,"
-                + "orange_vol INTEGER,"
-                + "cherry_vol INTEGER,"
-                + "lime_vol INTEGER,"
-                + "triplesec_vol INTEGER,"
-                + "blackberry_vol INTEGER,"
-                + "stir INTEGER,"
-                + "date TEXT,"
-                + "sentiment INTEGER"
+                + "stir INTEGER"
                 + ")";
         sqLiteDatabase.execSQL(sql);
         System.out.println("DB created");
