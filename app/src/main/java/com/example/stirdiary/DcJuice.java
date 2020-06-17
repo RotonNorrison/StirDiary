@@ -28,6 +28,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class DcJuice extends AppCompatActivity {
+    Diary creatingDiary;
+    private int formerHeight = 0;
     private ConstraintLayout mContainer;
     private ScheduledExecutorService scheduledExecutor;
     private List<Wine> wineList = new ArrayList<Wine>();
@@ -58,6 +60,10 @@ public class DcJuice extends AppCompatActivity {
                 set.connect(curId, ConstraintSet.END, R.id.chooseJuice_background, ConstraintSet.END);
                 set.applyTo(mContainer);
                 onAdding = !onAdding;
+                if (curHeight != 0) {
+                    creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));
+                    formerHeight = curHeight;
+                }
             }
             SinWaveView trial = findViewById(curId);
 
@@ -111,7 +117,7 @@ public class DcJuice extends AppCompatActivity {
         setContentView(R.layout.diary_creation_juice);
         wine_init();
 
-
+        final TextView introduction = findViewById(R.id.textView5);
         final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
         creatingDiary.showInfo();
 
@@ -136,31 +142,38 @@ public class DcJuice extends AppCompatActivity {
                         background0.setBackgroundColor(Color.parseColor("#c7b299"));
                         curWine[0] = 0;
                         onAdding = false;
+                        introduction.setText("Tastes tart and sweet, looks reddish and pink");
                         break;
                     case R.id.radioButton_gin:
                         background0.setBackgroundColor(Color.parseColor("#c92700"));
                         curWine[0] = 1;
                         onAdding = false;
+                        introduction.setText("A strong, sweet and colorless orange-flavored liqueur");
                         break;
                     case R.id.radioButton_rum:
                         background0.setBackgroundColor(Color.parseColor("#fbb097"));
                         curWine[0] = 2;
                         onAdding = false;
+                        introduction.setText("Tastes sweet, fresh squeezed");
                         break;
                     case R.id.radioButton_tequila:
                         background0.setBackgroundColor(Color.parseColor("#b5e7ad"));
                         curWine[0] = 3;
                         onAdding = false;
+                        introduction.setText("Sweet, slightly tart, with earthy undertones");
                         break;
                     case R.id.radioButton_vodka:
                         background0.setBackgroundColor(Color.parseColor("#29abe2"));
                         curWine[0] = 4;
                         onAdding = false;
+                        introduction.setText("Sweet, sour and slightly bitter");
                         break;
                     case R.id.radioButton_whisky:
                         background0.setBackgroundColor(Color.parseColor("#730028"));
                         curWine[0] = 5;
                         onAdding = false;
+                        introduction.setText("");
+                        introduction.setText("Very acidic and sour, downplays the strength of the alcohol");
                         break;
                 }
             }

@@ -5,6 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/cons_view"
 
 >
 
@@ -44,12 +45,5 @@
                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="32dp"
                app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="32dp"
                android:layout_marginEnd="32dp"/>
-    <SVGImageView android:layout_width="100dp" android:layout_height="180dp"
-                  android:id="@+id/res_pic"
-                  app:layout_constraintTop_toBottomOf="@+id/creatingFinal_addTitle_editText"
-                  app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-                  app:layout_constraintBottom_toTopOf="@+id/creatingFinal_sharebtn"
-                  app:layout_constraintHorizontal_bias="0.08"
-                  app:layout_constraintVertical_bias="0.19999999"/>
-    "
+
 </androidx.constraintlayout.widget.ConstraintLayout>
