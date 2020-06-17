@@ -14,7 +14,7 @@ public class Diary implements Serializable {
     private String diary_title;
     private int bottle_kind;
     //基酒种类及对应的量
-    private ArrayList<AddWine> winelist;
+    private ArrayList<AddWine> winelist = new ArrayList<AddWine>();
     private String text;
     private int decoration;
     private int share_state;
@@ -101,14 +101,6 @@ public class Diary implements Serializable {
 
     public void setStirWay(int stir_way) {
         this.stir_way = stir_way;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getDate() {
-        return date;
     }
 
     public int getSentiment() {

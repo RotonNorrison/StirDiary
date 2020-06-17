@@ -15,9 +15,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import okhttp3.*;
-
-
 public class SentimentClassify {
     /**
      * 获取权限token

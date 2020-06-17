@@ -10,9 +10,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.stirdiary.SentimentClassify;
-import com.alibaba.fastjson.JSON;
-import org.json.JSONObject;
-
 import java.io.IOException;
 
 public class DcText extends AppCompatActivity {
