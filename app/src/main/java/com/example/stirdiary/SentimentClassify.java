@@ -8,11 +8,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.ResponseCache;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
 
-import com.example.stirdiary.HttpUtil;
+import okhttp3.*;
+
 
 public class SentimentClassify {
     /**
@@ -86,19 +90,26 @@ public class SentimentClassify {
      * 获取情感分析结果
      */
     public static String sentimentClassify(String text) throws IOException {
+        // 请求url
+        String url = "https://aip.baidubce.com/rpc/2.0/nlp/v1/sentiment_classify";
         try {
-            String url = "https://aip.baidubce.com/rpc/2.0/nlp/v1/sentiment_classify";
-            //String AT = getAuth();
-            String AT = "24.7bb13562ec29830ff17a3be0f82506f6.2592000.1594739719.282335-20403909";
-            String param = "text="+text;
-            String result = HttpUtil.post(url, AT, param);
+            Map<String, Object> map = new HashMap<>();
+            map.put("text", text);
+
+            String param = GsonUtils.toJson(map);
+
+            // 注意这里仅为了简化编码每一次请求都去获取access_token，线上环境access_token有过期时间， 客户端可自行缓存，过期后重新获取。
+            String accessToken = "24.7bb13562ec29830ff17a3be0f82506f6.2592000.1594739719.282335-20403909";
+
+            String result = HttpUtil.post(url, accessToken, "application/json", param);
             System.out.println(result);
+
             return result;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-
 }
+
 

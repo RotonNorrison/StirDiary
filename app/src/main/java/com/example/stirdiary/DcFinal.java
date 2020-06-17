@@ -1,5 +1,6 @@
 package com.example.stirdiary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -18,7 +19,9 @@ import com.example.stirdiary.DBDiaryDao;
 import com.example.stirdiary.UUIDGenerator;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DcFinal extends AppCompatActivity {
@@ -29,17 +32,17 @@ public class DcFinal extends AppCompatActivity {
         setContentView(R.layout.diary_creation_final);
 
         final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
-        final DiaryFileHelper mDFH = new DiaryFileHelper(getApplicationContext());
-
-        List<Diary> Dlist = null;
-        try {
-            Dlist = mDFH.readDiaryListFromFile("diary_list_storage");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if (Dlist == null) {
-            Dlist = new ArrayList<Diary>();
-        }
+//        final DiaryFileHelper mDFH = new DiaryFileHelper(getApplicationContext());
+//
+//        List<Diary> Dlist = null;
+//        try {
+//            Dlist = mDFH.readDiaryListFromFile("diary_list_storage");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        if (Dlist == null) {
+//            Dlist = new ArrayList<Diary>();
+//        }
         //分享按钮事件绑定
         ToggleButton sharebtn;
         sharebtn = findViewById(R.id.creatingFinal_sharebtn);
@@ -58,7 +61,7 @@ public class DcFinal extends AppCompatActivity {
         //下一步按钮事件绑定
         ImageView btn_for_end_creating;
         btn_for_end_creating = findViewById(R.id.creatingFinal_endbtn);
-        final List<Diary> finalDlist = Dlist;
+//        final List<Diary> finalDlist = Dlist;
         btn_for_end_creating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,8 +69,12 @@ public class DcFinal extends AppCompatActivity {
                 EditText text = (EditText) findViewById(R.id.creatingFinal_addTitle_editText);
                 String title = text.getText().toString();
                 creatingDiary.setDiary_title(title);
+                //获取日期
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");// HH:mm:ss
+                Date date = new Date(System.currentTimeMillis());
+                creatingDiary.setDate(simpleDateFormat.format(date));
                 creatingDiary.showInfo();
-
+                //写入数据库
                 DBDiaryDao dbDiaryDao=new DBDiaryDao(DcFinal.this);
                 dbDiaryDao.insert(creatingDiary);
                 Intent it_for_choose_stirway = new Intent(DcFinal.this, MainActivity.class);
