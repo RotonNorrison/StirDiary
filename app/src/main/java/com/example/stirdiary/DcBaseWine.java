@@ -28,7 +28,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class DcBaseWine extends AppCompatActivity {
-    Diary creatingDiary;
+    private Diary creatingDiary;
     private ConstraintLayout mContainer;
     private ScheduledExecutorService scheduledExecutor;
     private List<Wine> wineList = new ArrayList<Wine>();
@@ -63,6 +63,7 @@ public class DcBaseWine extends AppCompatActivity {
                 if (curHeight != 0) {
                     creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
                     formerHeight = curHeight;
+                    creatingDiary.showInfo();
                 }
             }
             SinWaveView trial = findViewById(curId);
@@ -117,7 +118,7 @@ public class DcBaseWine extends AppCompatActivity {
         setContentView(R.layout.diary_creation_basewine);
         wine_init();
 
-
+        final TextView introduction = findViewById(R.id.textView5);
         creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
         creatingDiary.showInfo();
 
@@ -142,31 +143,37 @@ public class DcBaseWine extends AppCompatActivity {
                         background0.setBackgroundColor(Color.parseColor("#c7b299"));
                         curWine[0] = 0;
                         onAdding = false;
+                        introduction.setText("A spirit produced by distilling wine, \"water of life\"");
                         break;
                     case R.id.radioButton_gin:
                         background0.setBackgroundColor(Color.parseColor("#c92700"));
                         curWine[0] = 1;
                         onAdding = false;
+                        introduction.setText("Derives its predominant flavour from juniper berries.");
                         break;
                     case R.id.radioButton_rum:
                         background0.setBackgroundColor(Color.parseColor("#fbb097"));
                         curWine[0] = 2;
                         onAdding = false;
+                        introduction.setText("Made from sugarcane, tastes like \"sweetness\"");
                         break;
                     case R.id.radioButton_tequila:
                         background0.setBackgroundColor(Color.parseColor("#b5e7ad"));
                         curWine[0] = 3;
                         onAdding = false;
+                        introduction.setText("Made from the blue agave, with very little alcohol taste\n");
                         break;
                     case R.id.radioButton_vodka:
                         background0.setBackgroundColor(Color.parseColor("#29abe2"));
                         curWine[0] = 4;
                         onAdding = false;
+                        introduction.setText("Made from fermented cereal grains, spicy and briny");
                         break;
                     case R.id.radioButton_whisky:
                         background0.setBackgroundColor(Color.parseColor("#730028"));
                         curWine[0] = 5;
                         onAdding = false;
+                        introduction.setText("Made from fermented grain mash, aged liquor");
                         break;
                 }
             }
@@ -190,11 +197,18 @@ public class DcBaseWine extends AppCompatActivity {
         });
 
 
+        //下一步按钮事件绑定
         Button btn_for_continue_to_add_text;
         btn_for_continue_to_add_text = findViewById(R.id.chooseBase_nextbtn);
         btn_for_continue_to_add_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (onAdding) {
+                    if (curHeight != 0) {
+                        creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));
+                        formerHeight = curHeight;
+                    }
+                }
                 Intent it_for_add_text = new Intent(DcBaseWine.this, DcJuice.class);
                 it_for_add_text.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_add_text);
@@ -233,5 +247,4 @@ public class DcBaseWine extends AppCompatActivity {
 //                });
 
 
-//下一步按钮事件绑定
 

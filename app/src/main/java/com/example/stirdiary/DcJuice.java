@@ -28,11 +28,13 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class DcJuice extends AppCompatActivity {
+    private Diary creatingDiary;
     private ConstraintLayout mContainer;
     private ScheduledExecutorService scheduledExecutor;
     private List<Wine> wineList = new ArrayList<Wine>();
     private final int[] curWine = {0};
     private int curHeight = 0;
+    private int formerHeight = 0;
     private boolean onAdding = false;
     private int curId = 1000;
     final ConstraintSet set = new ConstraintSet();
@@ -58,6 +60,11 @@ public class DcJuice extends AppCompatActivity {
                 set.connect(curId, ConstraintSet.END, R.id.chooseJuice_background, ConstraintSet.END);
                 set.applyTo(mContainer);
                 onAdding = !onAdding;
+                if (curHeight != 0) {
+                    creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
+                    formerHeight = curHeight;
+                    creatingDiary.showInfo();
+                }
             }
             SinWaveView trial = findViewById(curId);
 
@@ -110,9 +117,7 @@ public class DcJuice extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.diary_creation_juice);
         wine_init();
-
-
-        final Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
+        creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
         creatingDiary.showInfo();
 
         final RadioGroup radioGroupWine = findViewById(R.id.chooseBase_RadioGroup);
@@ -189,6 +194,11 @@ public class DcJuice extends AppCompatActivity {
         btn_for_continue_to_add_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (onAdding & curHeight != 0) {
+                    creatingDiary.addWine(curWine[0], (curHeight - formerHeight));
+                    formerHeight = curHeight;
+                    creatingDiary.showInfo();
+                }
                 Intent it_for_add_text = new Intent(DcJuice.this, DcText.class);
                 it_for_add_text.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_add_text);

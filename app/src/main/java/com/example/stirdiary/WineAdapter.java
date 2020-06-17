@@ -5,10 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.caverock.androidsvg.SVG;
+import com.caverock.androidsvg.SVGImageView;
+import com.caverock.androidsvg.SVGParseException;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 public class WineAdapter extends RecyclerView.Adapter<WineAdapter.MyViewHolder> {
@@ -33,7 +39,23 @@ public class WineAdapter extends RecyclerView.Adapter<WineAdapter.MyViewHolder> 
         Diary diary = mDiaryList.get(i);
         myViewHolder.wineTitle.setText(diary.getDiary_title());
         myViewHolder.wineDate.setText(diary.getDate());
-        myViewHolder.wineImg.setImageResource(R.drawable.diaryicon);
+
+        SVGImageView wineImg;
+        FileInputStream input = null;
+        try {
+            input = mContext.openFileInput(diary.getUid());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        SVG svg = null;
+        try {
+            svg = SVG.getFromInputStream(input);
+        } catch (SVGParseException e) {
+            e.printStackTrace();
+        }
+        wineImg = new SVGImageView(mContext);
+        wineImg.setSVG(svg);
+        myViewHolder.mLinearLO.addView(wineImg, -1);
     }
 
     @Override
@@ -42,13 +64,14 @@ public class WineAdapter extends RecyclerView.Adapter<WineAdapter.MyViewHolder> 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        ImageView wineImg;
+
         TextView wineTitle;
         TextView wineDate;
+        LinearLayout mLinearLO;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            wineImg = itemView.findViewById(R.id.wine_img);
+            mLinearLO = itemView.findViewById(R.id.linearContainer);
             wineTitle = itemView.findViewById(R.id.wine_title);
             wineDate = itemView.findViewById(R.id.wine_date);
         }

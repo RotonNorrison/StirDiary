@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:singleLine="false"
             android:id="@+id/textView5" android:textColor="@android:color/white"
-            android:textSize="24sp" app:layout_constraintStart_toStartOf="parent"
+            android:textSize="18sp" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" android:layout_marginLeft="32dp"
             android:layout_marginStart="32dp" android:layout_marginTop="16dp"/>
     <TextView
@@ -30,7 +30,7 @@
           app:layout_constraintStart_toStartOf="parent"
           android:layout_marginLeft="32dp"
           android:layout_marginStart="32dp" android:id="@+id/view"
-          app:layout_constraintBottom_toTopOf="@+id/chooseBase_img_background1" android:layout_marginBottom="24dp"/>
+          app:layout_constraintBottom_toTopOf="@+id/chooseBase_img_background1" android:layout_marginBottom="16dp"/>
 
 
     <ImageView

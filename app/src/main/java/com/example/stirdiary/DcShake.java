@@ -24,7 +24,7 @@ public class DcShake extends AppCompatActivity {
         public void handleMessage(Message msg) {
             ConstraintLayout mLayout = findViewById(R.id.shakelayout);
             Diary creatingDiary = (Diary) getIntent().getSerializableExtra("diaryInfo");
-            mLayout.setBackgroundColor(Color.GREEN);
+            mLayout.setBackgroundColor(0xff79FF96);
 
         }
     };
