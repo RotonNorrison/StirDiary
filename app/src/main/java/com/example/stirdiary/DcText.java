@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.stirdiary.SentimentClassify;
 import com.alibaba.fastjson.JSON;
@@ -32,8 +33,12 @@ public class DcText extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //获取文本内容
-                EditText editText =(EditText)findViewById(R.id.creatingAddText_editText);
-                String text=editText.getText().toString();
+                EditText editText = (EditText) findViewById(R.id.creatingAddText_editText);
+                String text = editText.getText().toString();
+                if (text.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "You haven't write anything.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 try {
                     String sentiment = SentimentClassify.sentimentClassify(text);
                     System.out.println(sentiment);

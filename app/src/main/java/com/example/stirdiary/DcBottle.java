@@ -9,11 +9,14 @@ import android.widget.ImageButton;
 
 import com.example.stirdiary.DBDiaryDao;
 
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
 public class DcBottle extends AppCompatActivity {
+    private boolean checkValidate = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,7 @@ public class DcBottle extends AppCompatActivity {
                 btn_for_choose_bottle2.setBackgroundResource(R.drawable.ic_glass2);
                 btn_for_choose_bottle3.setBackgroundResource(R.drawable.ic_glass3);
                 btn_for_choose_bottle4.setBackgroundResource(R.drawable.ic_glass4);
+                checkValidate = true;
             }
         });
 
@@ -47,6 +51,7 @@ public class DcBottle extends AppCompatActivity {
                 btn_for_choose_bottle2.setBackgroundResource(R.drawable.ic_glass2_chosen);
                 btn_for_choose_bottle3.setBackgroundResource(R.drawable.ic_glass3);
                 btn_for_choose_bottle4.setBackgroundResource(R.drawable.ic_glass4);
+                checkValidate = true;
             }
         });
 
@@ -58,6 +63,7 @@ public class DcBottle extends AppCompatActivity {
                 btn_for_choose_bottle2.setBackgroundResource(R.drawable.ic_glass2);
                 btn_for_choose_bottle3.setBackgroundResource(R.drawable.ic_glass3_chosen);
                 btn_for_choose_bottle4.setBackgroundResource(R.drawable.ic_glass4);
+                checkValidate = true;
             }
         });
 
@@ -69,6 +75,7 @@ public class DcBottle extends AppCompatActivity {
                 btn_for_choose_bottle2.setBackgroundResource(R.drawable.ic_glass2);
                 btn_for_choose_bottle3.setBackgroundResource(R.drawable.ic_glass3);
                 btn_for_choose_bottle4.setBackgroundResource(R.drawable.ic_glass4_chosen);
+                checkValidate = true;
             }
         });
 
@@ -78,15 +85,15 @@ public class DcBottle extends AppCompatActivity {
         btn_for_continue_to_choose_base.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it_for_choose_base = new Intent(DcBottle.this, DcBaseWine.class);
-                it_for_choose_base.putExtra("diaryInfo", creatingDiary);
-                startActivity(it_for_choose_base);
-//                try {
-//                    mDFH.generateDiarySVG("temp", creatingDiary);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-                finish();
+                if (checkValidate) {
+                    Intent it_for_choose_base = new Intent(DcBottle.this, DcBaseWine.class);
+                    it_for_choose_base.putExtra("diaryInfo", creatingDiary);
+                    startActivity(it_for_choose_base);
+                    finish();
+                } else {
+                    Toast.makeText(getApplicationContext(), "You haven't made your choice.", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
     }

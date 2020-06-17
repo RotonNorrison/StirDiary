@@ -3,22 +3,20 @@
 
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
-                                                   android:id="@+id/chooseBase_background"
+                                                   android:id="@+id/chooseJuice_background"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
                                                    android:background="#E6B944"
 >
     <TextView
             android:text="Choose your base \n by mood"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="false"
             android:id="@+id/textView5" android:textColor="@android:color/white"
             android:textSize="18sp" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6" android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp" android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toStartOf="@+id/chooseBase_nextbtn" app:layout_constraintHorizontal_bias="0.0"
-            android:layout_marginRight="32dp" android:layout_marginEnd="32dp"/>
+            android:layout_marginStart="32dp" android:layout_marginTop="16dp"/>
     <TextView
             android:text="Base Choice"
             android:layout_width="wrap_content"
@@ -76,7 +74,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_brandy"
+                        android:background="@drawable/ic_grenadine"
                         android:button="@null"
                         android:tag="brandy"/>
 
@@ -86,7 +84,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_gin"
+                        android:background="@drawable/ic_orange"
                         android:button="@null"
                         android:tag="gin"/>
 
@@ -96,7 +94,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_rum"
+                        android:background="@drawable/ic_cherry"
                         android:button="@null"
                         android:tag="rum"/>
 
@@ -106,7 +104,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
-                        android:background="@drawable/ic_tequila"
+                        android:background="@drawable/ic_lime"
                         android:button="@null"
                         android:tag="tequila"/>
 
@@ -117,7 +115,7 @@
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
                         android:button="@null"
-                        android:drawableBottom="@drawable/ic_vodka"
+                        android:drawableBottom="@drawable/ic_triple_sec"
                         android:tag="vodka"/>
 
                 <RadioButton
@@ -127,7 +125,7 @@
                         android:layout_marginRight="40dp"
                         android:layout_weight="1"
                         android:button="@null"
-                        android:drawableBottom="@drawable/ic_whisky"
+                        android:drawableBottom="@drawable/ic_blackberry"
                         android:tag="whisky"/>
             </RadioGroup>
 
@@ -155,5 +153,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/chooseBase_img_background1"
             app:layout_constraintVertical_bias="0.72"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
