@@ -3,6 +3,7 @@ package com.example.stirdiary;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +30,9 @@ import com.example.stirdiary.UUIDGenerator;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -125,7 +128,6 @@ public class DcFinal extends AppCompatActivity {
         //下一步按钮事件绑定
         ImageView btn_for_end_creating;
         btn_for_end_creating = findViewById(R.id.creatingFinal_endbtn);
-        /**final List<Diary> finalDlist = Dlist;*/
         btn_for_end_creating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,8 +135,12 @@ public class DcFinal extends AppCompatActivity {
                 EditText text = (EditText) findViewById(R.id.creatingFinal_addTitle_editText);
                 String title = text.getText().toString();
                 creatingDiary.setDiary_title(title);
+                //获取日期
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");// HH:mm:ss
+                Date date = new Date(System.currentTimeMillis());
+                creatingDiary.setDate(simpleDateFormat.format(date));
                 creatingDiary.showInfo();
-
+                //写入数据库
                 DBDiaryDao dbDiaryDao=new DBDiaryDao(DcFinal.this);
                 dbDiaryDao.insert(creatingDiary);
                 finish();

@@ -7,10 +7,11 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.stirdiary.SentimentClassify;
+import com.alibaba.fastjson.JSON;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -40,6 +41,10 @@ public class DcText extends AppCompatActivity {
                 }
                 try {
                     String sentiment = SentimentClassify.sentimentClassify(text);
+                    System.out.println(sentiment);
+                    int sentInt = Character.getNumericValue(sentiment.charAt(sentiment.length() - 4));
+                    System.out.println(sentInt);
+                    creatingDiary.setSentiment(sentInt);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

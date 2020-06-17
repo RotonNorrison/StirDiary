@@ -1,6 +1,7 @@
 package com.example.stirdiary;
 
 import android.content.Intent;
+import android.os.StrictMode;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
@@ -19,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
         SQLiteStudioService.instance().start(this);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        //!!!!!!!!!Danger!!!!!!!!
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
         //创建日记文件保存类
         DiaryFileHelper mFileHelper = new DiaryFileHelper(this);
 

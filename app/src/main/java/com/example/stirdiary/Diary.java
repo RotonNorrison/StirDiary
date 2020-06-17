@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.example.stirdiary.UUIDGenerator;
 
 public class Diary implements Serializable {
@@ -19,18 +20,26 @@ public class Diary implements Serializable {
     private int share_state;
     private int stir_way;
     private String date;
+    private int sentiment;
 
-
-    public Diary(){
-        uid=UUIDGenerator.getUUID();
-        diary_title="";
-        bottle_kind=0;
-        winelist=new ArrayList<>();
-        text="";
-        share_state=0;
-        stir_way=0;
+    public Diary() {
+        uid = UUIDGenerator.getUUID();
+        diary_title = "";
+        bottle_kind = 0;
+        text = "";
+        share_state = 0;
+        stir_way = 0;
+        date = "0000-00-00";
+        sentiment = 1;
     }
-    public String getUid() { return uid; }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
 
     final public String getDiary_title() {
         return diary_title;
@@ -53,9 +62,13 @@ public class Diary implements Serializable {
         return winelist;
     }
 
-    public void addWine(int id, int volume) {
-        AddWine temp = new AddWine(id, volume);
+    public void addWine(int wine_id, int volume) {
+        AddWine temp = new AddWine(wine_id, volume);
         winelist.add(temp);
+    }
+
+    public void setWineVol(int wine_id, int volume) {
+        winelist.get(wine_id).setVolume(volume);
     }
 
     public String getText() {
@@ -90,6 +103,22 @@ public class Diary implements Serializable {
         this.stir_way = stir_way;
     }
 
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public int getSentiment() {
+        return sentiment;
+    }
+
+    public void setSentiment(int sentiment) {
+        this.sentiment = sentiment;
+    }
+
     public void showInfo() {
         System.out.println("Uid: " + getUid());
         System.out.println("Title: " + getDiary_title());
@@ -98,6 +127,7 @@ public class Diary implements Serializable {
         System.out.println("Decoration: " + getDecoration());
         System.out.println("ShareState: " + isShare_state());
         System.out.println("StirWay: " + getStirWay());
+        System.out.println("Date: " + getDate());
         ArrayList<AddWine> list = getWinelist();
         if (list != null) {
             for (int i = 0; i < list.size(); i++) {

@@ -27,13 +27,9 @@ public class DBHelper extends SQLiteOpenHelper {
                 + "content TEXT,"
                 + "bottle INTEGER,"
                 + "share INTEGER,"
-                + "brandy_vol INTEGER,"
-                + "gin_vol INTEGER,"
-                + "rum_vol INTEGER,"
-                + "tequila_vol INTEGER,"
-                + "vodka_vol INTEGER,"
-                + "whisky_vol INTEGER,"
-                + "stir INTEGER"
+                + "stir INTEGER,"
+                + "date TEXT,"
+                + "sentiment INTEGER"
                 + ")";
         sqLiteDatabase.execSQL(sql);
         System.out.println("DB created");

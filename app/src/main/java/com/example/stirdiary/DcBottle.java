@@ -7,8 +7,13 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.example.stirdiary.DBDiaryDao;
+
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
 
 public class DcBottle extends AppCompatActivity {
     private boolean checkValidate = false;
@@ -74,7 +79,6 @@ public class DcBottle extends AppCompatActivity {
             }
         });
 
-
         //下一步按钮事件绑定
         Button btn_for_continue_to_choose_base;
         btn_for_continue_to_choose_base = findViewById(R.id.chooseBottle_nextbtn);
@@ -93,4 +97,6 @@ public class DcBottle extends AppCompatActivity {
             }
         });
     }
+
 }
+

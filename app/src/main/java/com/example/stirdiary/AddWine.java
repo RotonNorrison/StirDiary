@@ -6,7 +6,6 @@ public class AddWine implements Serializable {
     private String winename;
     private int id;
     private int volume;
-
     public AddWine(int nid, int vol) {
         id = nid;
         volume = vol;
@@ -56,8 +55,10 @@ public class AddWine implements Serializable {
         winename=name;
     }
 
-    public void setVolume(int vol) {
-        volume = vol;
+
+    public void setVolume(int vol){
+        volume=vol;
+
     }
 
     public String getWinename(){
