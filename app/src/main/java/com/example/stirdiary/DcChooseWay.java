@@ -29,7 +29,7 @@ public class DcChooseWay extends AppCompatActivity {
         chooseStirWay_radiobtn_tiaohe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                creatingDiary.setStirWay(1);
+                creatingDiary.setStirWay(2);
                 Intent it_for_creating_stir = new Intent(DcChooseWay.this, Dcstir.class);
                 it_for_creating_stir.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_creating_stir);
@@ -39,7 +39,7 @@ public class DcChooseWay extends AppCompatActivity {
         chooseStirWay_radiobtn_duihe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                creatingDiary.setStirWay(2);
+                creatingDiary.setStirWay(1);
                 Intent it_for_creating_stir = new Intent(DcChooseWay.this, DcFinal.class);
                 it_for_creating_stir.putExtra("diaryInfo", creatingDiary);
                 startActivity(it_for_creating_stir);

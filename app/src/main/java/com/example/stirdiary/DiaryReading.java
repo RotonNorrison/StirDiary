@@ -71,8 +71,10 @@ public class DiaryReading extends AppCompatActivity {
                 ArrayList<AddWine> winelist = myDiary.getWinelist();
                 StringBuilder textStr = new StringBuilder();
                 for (AddWine wine : winelist) {
-                    if (textStr.length() > 0) textStr.append("\n");
-                    textStr.append(String.format("%s %.1fmL", wine.getWinename(), wine.getVolume() / 10.0));
+                    if (wine.getVolume() > 0) {
+                        if (textStr.length() > 0) textStr.append("\n");
+                        textStr.append(String.format("%s %.1fmL", wine.getWinename(), wine.getVolume() / 10.0));
+                    }
                 }
                 text.setText(textStr.toString());
                 AlertDialog alertDialog = new AlertDialog.Builder(DiaryReading.this)

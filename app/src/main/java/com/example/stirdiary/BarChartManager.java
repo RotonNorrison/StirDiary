@@ -140,7 +140,7 @@ public class BarChartManager {
 //        leftAxis.setLabelCount(yValues.length + 1, false);
         leftAxis.setAxisLineColor(Color.parseColor("#778899"));
 //        设置Y轴的最小值和最大值
-        leftAxis.setAxisMaximum(100);
+        leftAxis.setAxisMaximum(20);
         leftAxis.setAxisMinimum(0);
         leftAxis.setTextSize(10f);
         mBarChart.setData(data);

@@ -97,7 +97,7 @@ public class OwnDiary_list extends AppCompatActivity {
                         mRecyclerView.setAdapter(mAdapter);
                         mAdapter.notifyDataSetChanged();
                         return true;
-                    } else if (touchUpX - touchDownX < 100) {
+                    } else if (touchUpX - touchDownX < -100) {
                         curMonth += 1;
                         if (curMonth < 10) {
                             month_text.setText("2020-0" + curMonth);

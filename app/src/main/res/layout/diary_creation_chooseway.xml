@@ -7,21 +7,30 @@
         android:layout_height="match_parent"
         android:background="#C69C6D"
 >
-    <ImageView android:layout_width="265dp" android:layout_height="122dp"
-               app:srcCompat="@drawable/ic_choosewaytext" app:layout_constraintTop_toTopOf="parent"
-               app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="20dp"
-               android:scaleType="centerInside"
-               android:layout_marginTop="48dp" android:layout_marginStart="24dp" android:id="@+id/chooseway_base"/>
+
+    <ImageView
+            android:id="@+id/chooseway_base"
+            android:layout_width="328dp"
+            android:layout_height="157dp"
+            android:layout_marginTop="48dp"
+            android:scaleType="centerInside"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_choosewaytext"/>
+
     <ImageView
             android:id="@+id/choosewayimg_background1"
-            android:layout_width="0dp"
-            android:layout_height="600dp"
+            android:layout_width="417dp"
+            android:layout_height="527dp"
             android:layout_marginTop="60dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chooseway_base"
-            app:srcCompat="@drawable/ic_newboard" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:scaleType="fitXY"
-            app:layout_constraintVertical_bias="1.0"/>
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_newboard"/>
     <ImageView android:layout_width="310dp" android:layout_height="110dp"
                app:srcCompat="@drawable/ic_layertext"
                app:layout_constraintBottom_toBottomOf="parent"

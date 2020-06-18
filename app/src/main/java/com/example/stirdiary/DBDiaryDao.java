@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class DBDiaryDao {
     private static SQLiteDatabase db;
@@ -132,6 +134,7 @@ public class DBDiaryDao {
         }
         c.close();
         db.close();
+        Collections.reverse(diaries);
         return diaries;
     }
 }

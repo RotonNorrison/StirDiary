@@ -124,7 +124,7 @@ public class DiaryThumbnailHelper {
         wineColor.put("orange", "#FBB571");
         wineColor.put("cherry", "#FF92FF");
         wineColor.put("lime", "#6AFFAB");
-        wineColor.put("tripleSec", "#00FFFF");
+        wineColor.put("triplesec", "#00FFFF");
         wineColor.put("blackberry", "#C11EF1");
         double[] XL = new double[]{66,139.9,112.7,85.3};
         double[] YE = new double[]{135,65.5,96,188.8};

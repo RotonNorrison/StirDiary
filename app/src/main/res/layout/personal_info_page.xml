@@ -16,7 +16,7 @@
                   android:textColor="#ffffff"/>
         <TextView android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:id="@+id/personal_info_page_text1"
+                  android:id="@+id/senitive"
                   android:text="85%"
                   android:textSize="65sp"
                   android:layout_marginLeft="30dp"

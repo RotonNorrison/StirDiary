@@ -136,4 +136,5 @@ public class Diary implements Serializable {
     public void setDate(String date) {
         this.date = date;
     }
+
 }

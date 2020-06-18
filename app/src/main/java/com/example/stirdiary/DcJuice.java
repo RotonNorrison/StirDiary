@@ -134,7 +134,7 @@ public class DcJuice extends AppCompatActivity {
                 int id = group.getCheckedRadioButtonId();
                 switch (id) {
                     case R.id.radioButton_brandy:
-                        background0.setBackgroundColor(Color.parseColor("#c7b299"));
+                        background0.setBackgroundColor(Color.parseColor("#ED9C9B"));
 
                         onAdding = false;
                         if (curHeight != 0) {
@@ -145,7 +145,7 @@ public class DcJuice extends AppCompatActivity {
                         curWine[0] = 0;
                         break;
                     case R.id.radioButton_gin:
-                        background0.setBackgroundColor(Color.parseColor("#c92700"));
+                        background0.setBackgroundColor(Color.parseColor("#FBCD8C"));
 
                         onAdding = false;
                         if (curHeight != 0) {
@@ -156,7 +156,7 @@ public class DcJuice extends AppCompatActivity {
                         curWine[0] = 1;
                         break;
                     case R.id.radioButton_rum:
-                        background0.setBackgroundColor(Color.parseColor("#fbb097"));
+                        background0.setBackgroundColor(Color.parseColor("#FFB9FF"));
 
                         if (curHeight != 0) {
                             creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));
@@ -167,7 +167,7 @@ public class DcJuice extends AppCompatActivity {
                         onAdding = false;
                         break;
                     case R.id.radioButton_tequila:
-                        background0.setBackgroundColor(Color.parseColor("#b5e7ad"));
+                        background0.setBackgroundColor(Color.parseColor("#82FFC9"));
 
                         onAdding = false;
                         if (curHeight != 0) {
@@ -178,7 +178,7 @@ public class DcJuice extends AppCompatActivity {
                         curWine[0] = 3;
                         break;
                     case R.id.radioButton_vodka:
-                        background0.setBackgroundColor(Color.parseColor("#29abe2"));
+                        background0.setBackgroundColor(Color.parseColor("#B0FFFF"));
 
                         onAdding = false;
                         if (curHeight != 0) {
@@ -189,7 +189,7 @@ public class DcJuice extends AppCompatActivity {
                         curWine[0] = 4;
                         break;
                     case R.id.radioButton_whisky:
-                        background0.setBackgroundColor(Color.parseColor("#730028"));
+                        background0.setBackgroundColor(Color.parseColor("#C1AAF1"));
 
                         if (curHeight != 0) {
                             creatingDiary.addWine(curWine[0] + 6, (curHeight - formerHeight));

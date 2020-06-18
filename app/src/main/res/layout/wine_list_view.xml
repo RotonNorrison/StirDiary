@@ -3,7 +3,7 @@
               android:orientation="horizontal"
               android:id="@+id/linearContainer"
               android:layout_width="wrap_content"
-              android:layout_height="80dp"
+              android:layout_height="70dp"
               android:onClick="onItemClick"
               android:paddingLeft="40dp"
               android:background="@drawable/listblocks"

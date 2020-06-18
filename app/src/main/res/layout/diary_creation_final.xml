@@ -24,7 +24,7 @@
             android:layout_height="36dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="给你的酒取个名字吧"
+            android:hint="Write Your Diary here"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:background="#00FFFFFF"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
